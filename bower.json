@@ -1,0 +1,22 @@
+{
+  "name": "custom",
+  "description": "Plantilla",
+  "main": "index.js",
+  "authors": [
+    "Fernan"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fernandopro/custom",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "wow": "WOW#~1.1.2",
+    "animate.css": "~3.4.0"
+  }
+}

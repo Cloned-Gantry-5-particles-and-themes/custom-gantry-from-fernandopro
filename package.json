@@ -1,0 +1,26 @@
+{
+  "name": "custom",
+  "version": "1.0.0",
+  "description": "Plantilla",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandopro/custom.git"
+  },
+  "author": "Fernan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandopro/custom/issues"
+  },
+  "homepage": "https://github.com/fernandopro/custom#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "browser-sync": "^2.9.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect-php": "0.0.7",
+    "gulp-rename": "^1.2.2"
+  }
+}

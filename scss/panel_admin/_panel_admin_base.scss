@@ -1,0 +1,411 @@
+.base_admin{	
+/**********************************************************************/
+
+/*VARIABLES GLOBALES*/
+$coloBloqMaestro        : transparent; /*FONDO GLOBAL*/
+$fondoContenedor        : #F0F0F0;      /*FONDO DEL BLOQUE DE LAS TABS*/
+$colorTabTitulos         : #fff;
+
+/*TABS*/
+$paddingTabs            : 1.2em 2.5em;
+$font_sizeTabs          : 1.4em;
+$colorTextoTab_Active   : #1A3867;
+$colorTab_Active_Borde  : #3180C2;
+$anchoTab_Active_Borde  : 5px;
+
+$colorTextoTabs         : #828282;
+$colorFondoTabs         : #F0F0F0;
+
+$colorFondoContent      : #fff;
+$colorTextoContent      : #666;
+$anchoBordeInferior     : 5px;
+$colorBordeInferior     : $colorFondoTabs;
+
+$tabInfoColor           : #F4A742;
+
+/*SEBLOD*/
+$colorGetLabel          : $colorTextoTab_Active;
+$anchoImputText         : 450px;
+$width_hr               : $anchoImputText;
+
+/********************************************************/
+
+.infoTitulo{
+	margin-top:80px;
+	margin-bottom:20px;
+	text-align:center;
+	& span {
+		color: darken(rgba(#8F4DAE,1),0%);
+        letter-spacing: 1px;
+		font-size:2em;
+		line-height:1.2;
+	}
+
+}
+
+
+.cabeceraAdmin {
+		display:flex;
+		flex-wrap:wrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		align-content:center;
+		@include breakpoint(no-mobile) {
+			margin:0 20px;
+			margin-top:20px;
+		}
+		& > div {
+			/*width:calc(25% - 1em);*/
+			flex-grow:1;
+			@include breakpoint(mobile-only) {
+				text-align:center;
+				width:calc(100% - 1em);
+				margin-bottom:15px;
+			}
+			
+		}
+		& div:nth-child(4){
+				background:rgba(#3180C2,1);
+				
+				@media only all and (min-width: 768px) and (max-width: 807px)  {
+					margin-top: 30px;
+				}
+		}
+		@include breakpoint(no-mobile) {
+			& div:first-child{
+				flex-grow:0;
+			}
+			& div:nth-child(2){
+				position:relative;
+				display:flex;
+				align-items:center;
+				background:rgba(#296FAB,1);
+				flex-grow:0;
+			}
+			& div:nth-child(3){
+				display:flex;
+				align-items:center;
+				background:rgba(#3180C2,1);
+			}
+			
+			& div:nth-child(4){
+				position:relative;
+				@include breakpoint(desktop-only) {
+					flex: 0 1 180px ;
+				}
+			}
+			
+			& div:nth-child(4):before{
+				content:"";
+				height:8%;
+				background: #000;
+				position:absolute;
+				bottom:14%;
+				box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+				z-index:-1;	
+				opacity: .8;
+				}
+				
+			& div:nth-child(4):before{
+				@include breakpoint(desktop-only) {
+					width:100%;
+					right:10px;
+				    transform:rotate(3deg);
+				}
+			}
+		}
+		
+		@include breakpoint(mobile-only) {
+			text-align:center;
+		}
+}
+
+
+
+.contenedorAdmin {
+	background: $coloBloqMaestro;
+	padding:10px;
+	padding-top:10px;
+	/*border-radius:4px;*/
+	/*border-bottom: 1px solid #e3e3e3;*/
+}
+
+.tituloApp {
+	font-size:1.8em;
+	line-height:1.5em;
+	font-weight:400;
+	color:#333;
+	vertical-align:middle;
+	@include breakpoint(no-mobile) {
+		margin:0 15px;
+		position:relative;
+		/*bottom:7px;*/
+		padding:15px;
+		/*border-radius:10px;*/
+		color:#fff;
+	}
+	& img{
+		@include breakpoint(no-mobile) {
+			margin-right: 10px;
+		}
+	}
+}
+
+.logoTdweb{
+	 text-align:center;
+	@include breakpoint(desktop-only) {
+		text-align:right;
+	}
+	
+}
+
+.robot_admin{
+	@include breakpoint(mobile-only) {
+		display:none;
+	}
+}
+
+
+/************ BASE DE LAS TAPS ******************/
+
+/***********************************************/
+
+	
+	/*Flexbox-tabs*/
+	.tabsFlex {
+		display:flex;
+		flex-wrap:wrap;
+		justify-content: flex-start;
+		& > div {
+			
+			width:calc(100% - 1em);
+			margin:.5em;
+			padding:2.5em;
+			background:#f5f5f5;
+			/*border: 1px solid #ddd;*/
+            box-shadow: inset 13px 13px 3px -13px rgba(0,0,0,0.13);
+			@media only screen and (max-width: 900px) {
+				width:calc(100% - 1em);
+				margin-bottom:50px;
+			}
+		}
+	}
+	
+	/*Fun begins*/
+	.tab_container {
+		margin: 0 0 14px 0;
+		padding-top: 5px;
+		position: relative;
+	}
+	
+	#tab1:checked ~ #content1,
+	#tab2:checked ~ #content2,
+	#tab3:checked ~ #content3,
+	#tab4:checked ~ #content4,
+	#tab5:checked ~ #content5,
+	#tab6:checked ~ #content6,
+	#tab7:checked ~ #content7,
+	#tab8:checked ~ #content8,
+	#tab9:checked ~ #content9,
+	#tab10:checked ~ #content10,
+	#tab11:checked ~ #content11,
+	#tab12:checked ~ #content12,
+	#tab13:checked ~ #content13,
+	#tab14:checked ~ #content14,
+	#tab15:checked ~ #content15,
+	#tab16:checked ~ #content16,
+	#tab17:checked ~ #content17,
+	#tab18:checked ~ #content18,
+	#tab19:checked ~ #content19,
+	#tab20:checked ~ #content20
+	{
+	  display: block;
+	  padding: 20px;
+	  background: $colorFondoContent;
+	  color: $colorTextoContent;
+	  border-bottom: $anchoBordeInferior solid $colorBordeInferior;
+	}
+		
+	*,
+	*:after,
+	*:before {
+		box-sizing: border-box;
+	}
+	
+	.clearfix:before,
+	.clearfix:after {
+		content: " ";
+		display: table;
+	}
+	
+	.clearfix:after {
+		clear: both;
+	}
+	
+	
+	
+	input[name="tabs"], section {
+	  clear: both;
+	  padding-top: 10px;
+	  display: none;
+	}
+	
+	label {
+	  font-size: $font_sizeTabs;
+	  display: block;
+	  float: left;
+	  padding: $paddingTabs;
+	  margin-bottom:0;
+	  cursor: pointer;
+	  text-decoration: none;
+	  text-align: center;
+	  color: $colorTextoTabs;
+	  background: $colorFondoTabs;
+	  font-weight: 700;
+	  @include breakpoint(desktop-range) {
+		  font-size:1.1em;
+	  }
+	  @include breakpoint(tablet-range) {
+		  font-size:1em;
+	  }
+	  @include breakpoint(mobile-only) {
+		  padding: .5em .8em;
+		  font-size: 1.1em;
+		  text-align:center;
+	  }
+	  &:hover{
+		  background:#3180C2;
+		  color:#fff;
+	  }
+	}
+	
+	.labelInfo{
+		&:hover{
+		background:$tabInfoColor;
+		color:#fff;
+		transition:all linear .1s;
+		}
+	}
+
+	/*Joomla Editor - TinyMCE*/
+	.mce-wordcount.mce-widget.mce-label{
+		background:none;
+		padding:0;
+		margin-right:10px;
+		margin-top:10px;
+		color:#333;
+		font-size:1em;
+	}
+	
+	
+	.tab_container .tab-content p,
+	.tab_container .tab-content h3 {
+	  animation: fadeInScale 0.7s ease-in-out;
+	}
+	.tab_container .tab-content h3  {
+	  text-align: center;
+	}
+	
+	.tab_container [id^="tab"]:checked + label {
+	  color:$colorTextoTab_Active;
+	  background: $colorFondoContent;
+	  box-shadow: inset 0 $anchoTab_Active_Borde $colorTab_Active_Borde;
+	}
+	
+	.tab_container [id^="tab"]:checked + label .fa {
+	  color: $colorTextoTab_Active;
+	}
+	
+	label .fa {
+	  font-size: 1.3em;
+	  margin: 0 0.4em 0 0;
+	}
+	
+	/*Media query*/
+	@media only screen and (max-width: 900px) {
+	  label span {
+		display: none;
+	  }
+	  
+	  .tab_container {
+		width: 98%;
+	  }
+	}
+	
+	/*Content Animation*/
+	@keyframes fadeInScale {
+	  0% {
+		transform: scale(0.9);
+		opacity: 0;
+	  }
+	  
+	  100% {
+		transform: scale(1);
+		opacity: 1;
+	  }
+	}
+	
+	.no_wrap {
+	  text-align:center;
+	  color: #0ce;
+	}
+	.link {
+	  text-align:center;
+	}
+	
+	/******CAMPOS SEBLOD*********/
+	
+	/****************************/
+	
+	hr{
+		width: $width_hr;
+		@include breakpoint(no-desktop) {
+		  width: 100%;
+	  } 
+	}
+
+	input[type=text], select {
+	  width: $anchoImputText; 
+	  height: 39px; 
+	  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+	  background-color: #fff;
+	  font-size: 1.2em;
+      font-weight: 300;
+	  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+	  border: solid 1px #cbc9c9;
+	  margin-left: -5px;
+	  margin-top: 13px; 
+	  padding-left: 10px;
+	  @include breakpoint(no-desktop) {
+		  width: 100%;
+	  }
+	}
+	
+	.getLabel {
+		color: $colorGetLabel;
+		font-weight:700;
+	}
+	
+	.cck_upload_image{
+		margin-top:30px;
+	}
+	
+	.cck_label_upload_image{
+		& label{
+			display:none;
+		}
+	}
+	
+	/*Tab Activa del ayuda*/
+	.tab_container [id="tab5"]:checked + label {
+		background:$tabInfoColor;
+		box-shadow:none;
+		& .fa{
+			color:#fff;
+		}
+			
+	}
+	
+		
+/**********************************************************************/
+}

@@ -1,0 +1,10 @@
+#g-showcase{
+	background:$accent-color-1;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	@include breakpoint(mobile-only) {
+		background:$accent-color-1;
+		display:flex;
+	}
+}

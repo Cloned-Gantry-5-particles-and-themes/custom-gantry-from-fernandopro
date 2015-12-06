@@ -1,7 +1,0 @@
-#g-main{
-	background: #FE9AFF;
-	display:flex;
-	@include breakpoint(mobile-only) {
-		background:$accent-color-1;
-	}
-}

@@ -1,16 +1,6 @@
-var watchify      = require('watchify');
-var browserify    = require('browserify');
 var gulp          = require('gulp');
-var source        = require('vinyl-source-stream');
-var buffer        = require('vinyl-buffer');
-var gutil         = require('gulp-util');
-var babelify      = require('babelify');
-var uglify        = require('gulp-uglify');
-var sourcemaps    = require('gulp-sourcemaps');
-var assign        = require('lodash.assign');
 var php           = require('gulp-connect-php');
 var browserSync   = require('browser-sync');
-var sass          = require('gulp-sass');
 var autoprefixer  = require('gulp-autoprefixer');
 var rename        = require("gulp-rename");
 

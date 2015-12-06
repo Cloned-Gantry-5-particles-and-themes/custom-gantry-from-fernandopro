@@ -145,6 +145,7 @@ gulp.task('watch', function() {
   gulp.watch('scss/src/**/*.scss', ['styles']);
   gulp.watch('scss/public').on('change', function () {browserSync.reload();});
   gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
+  gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
   gulp.watch(target.sass_seblod, ['styles']);
   gulp.watch('scss/panel_admin/**/*.scss', ['isis']);
   gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});

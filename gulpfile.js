@@ -10,6 +10,7 @@ var sourcemaps    = require('gulp-sourcemaps');
 var assign        = require('lodash.assign');
 var php           = require('gulp-connect-php');
 var browserSync   = require('browser-sync');
+var reload        = browserSync.reload;
 var sass          = require('gulp-sass');
 var autoprefixer  = require('gulp-autoprefixer');
 var rename        = require("gulp-rename");
@@ -43,7 +44,7 @@ gulp.task('styles', function() {
               cascade: false
           }))
       .pipe(gulp.dest(target.sass_dest))
-	  .pipe(browserSync.reload({stream:true}));
+	  .pipe(reload({stream:true}));
     
 });
 
@@ -69,7 +70,7 @@ gulp.task('isis', function() {
           })) 
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(target.isis_dest))
-	.pipe(browserSync.reload({stream:true}));
+	.pipe(reload({stream:true}));
     
 });
 
@@ -113,7 +114,7 @@ function bundle() {
     // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('../maps')) // writes .map file
     .pipe(gulp.dest('./js-compliled/js'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(reload({stream:true}));
 }
 
 
@@ -124,15 +125,16 @@ function bundle() {
 // Tarea sincronizar el navegador
 // ////////////////////////////////////////////////
 gulp.task('php', function() {
-    php.server({ base: '../../', port: 8010, keepalive: true});
+    php.server({ base: '../../', port: 3000, keepalive: true});
 });
 
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"localhost:8888/joomla1/",
-        port: 8080,
+        proxy:"dropbox:8887/dentist/",
+        port: 3000,
         open: false,
-        notify: false
+        notify: false,
+		//injectChanges: true
     });
 });
 
@@ -142,13 +144,14 @@ gulp.task('browserSync', function() {
 // Tarea Reloj escucha
 // ////////////////////////////////////////////////
 gulp.task('watch', function() {
-  gulp.watch('scss/src/**/*.scss', ['styles']);
-  gulp.watch('scss/public/**/*.scss').on('change', function () {browserSync.reload();});
-  gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
-  gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
-  gulp.watch(target.sass_seblod, ['styles']);
-  gulp.watch('scss/panel_admin/**/*.scss', ['isis']);
-  gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
+	
+   gulp.watch('scss/src/**/*.scss', ['styles']);
+   gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
+   gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
+   gulp.watch(target.sass_seblod, ['isis']);
+   gulp.watch('scss/panel_admin/**/*.scss', ['isis']);
+   gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
+
 });
 
 

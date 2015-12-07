@@ -1,0 +1,19 @@
+name: Accent Colors
+description: Colores Base
+type: core
+
+form:
+  fields:
+
+    color-1:
+      type: input.colorpicker
+      label: Accent Color 1
+      default: "#1867A9"
+    color-2:
+      type: input.colorpicker
+      label: Accent Color 2
+      default: "#3180C2"
+    color-3:
+      type: input.colorpicker
+      label: Accent Color 3
+      default: "#FBA833"

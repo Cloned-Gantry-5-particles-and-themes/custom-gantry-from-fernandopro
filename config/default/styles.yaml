@@ -2,21 +2,19 @@ preset: preset2
 base:
   background: '#ffffff'
   text-color: '#666666'
-  body-font: 'roboto, sans-serif'
-  heading-font: 'roboto, sans-serif'
 accent:
-  color-1: '#3180c2'
-  color-2: '#ef6c00'
+  color-1: '#1867A9'
+  color-2: '#3180C2'
+  color-3: '#FBA833'
 header:
-  background: '#1867a9'
+  background: '#1867A9'
   text-color: '#ffffff'
 navigation:
-  background: '#3180c2'
+  background: '#3180C2'
   text-color: '#ffffff'
   overlay: 'rgba(0, 0, 0, 0.4)'
 showcase:
-  background: '#142d53'
-  image: ''
+  background: '#1867A9'
   text-color: '#ffffff'
 feature:
   background: '#ffffff'
@@ -31,10 +29,8 @@ footer:
   background: '#ffffff'
   text-color: '#666666'
 offcanvas:
-  background: '#142d53'
+  background: '#1867A9'
   text-color: '#ffffff'
-  width: 17rem
-  toggle-color: '#ffffff'
 breakpoints:
   large-desktop-container: 75rem
   desktop-container: 60rem

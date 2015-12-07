@@ -1,0 +1,4 @@
+enabled: '1'
+content: 'Powered by <a target="_blank" href="http://www.tdweb.es" title="Tdweb" class="g-powered-by">Tdweb</a>'
+css:
+  class: marca

@@ -1,0 +1,7 @@
+name: _body_only
+timestamp: 1449486462
+preset:
+  image: 'gantry-admin://images/layouts/body-only.png'
+  name: _body_only
+  timestamp: 1449486462
+positions: {  }

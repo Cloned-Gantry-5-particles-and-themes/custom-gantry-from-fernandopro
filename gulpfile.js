@@ -132,7 +132,7 @@ gulp.task('browserSync', function() {
     browserSync({
         proxy:"dropbox:8887/dentist/",
         port: 3000,
-        open: false,
+        open: true,
         notify: false,
 		//injectChanges: true
     });

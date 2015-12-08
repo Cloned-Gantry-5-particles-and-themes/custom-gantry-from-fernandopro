@@ -1,32 +1,83 @@
-var watchify      = require('watchify');
-var browserify    = require('browserify');
 var gulp          = require('gulp');
-var source        = require('vinyl-source-stream');
-var buffer        = require('vinyl-buffer');
-var gutil         = require('gulp-util');
-var babelify      = require('babelify');
-var uglify        = require('gulp-uglify');
 var sourcemaps    = require('gulp-sourcemaps');
-var assign        = require('lodash.assign');
 var php           = require('gulp-connect-php');
+var sass          = require('gulp-sass');
+var rename        = require("gulp-rename");
+var gutil         = require('gulp-util');
+var concat        = require('gulp-concat');
+var clean         = require('gulp-rimraf');
+var minifycss     = require('gulp-minify-css');
+var autoprefixer  = require('gulp-autoprefixer');
+var uglify        = require('gulp-uglify');
+var notify        = require('gulp-notify');
 var browserSync   = require('browser-sync');
 var reload        = browserSync.reload;
-var sass          = require('gulp-sass');
-var autoprefixer  = require('gulp-autoprefixer');
-var rename        = require("gulp-rename");
-var concat        = require('gulp-concat');
 
 // ///////////////////////////////////////////////
 // RUTAS DE LOS ARCHIVOS
 // ///////////////////////////////////////////////
 var target = {
-	sass_src        : 'scss/src/**/*.scss',  // Ruta todos mis archivos sass
+	sass_src        : 'assets/scss/**/*.scss',  // Ruta todos mis archivos sass
 	sass_dest       : 'scss/public',  // Ruta destino después de procesarse sass
 	sass_seblod     : '../../seb_minima/positions/**/*.scss', //Ruta Sass en template minima de Seblod
 	isis_src        : 'scss/panel_admin/custom.scss', //Ruta archivos Sass isis
-	isis_dest       : '../../../administrator/templates/isis/css', //Ruta archivos Sass isis
-	bower_ruta       : './bower_components/' //Ruta Bower
+	isis_dest       : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
 }
+
+var assetsDir = 'assets';
+var jsDir = assetsDir + '/js';
+var CssDir = assetsDir + '/css';
+var targetJs = 'js';
+var targetCss = 'css';
+
+
+// ///////////////////////////////////////////////
+// RUTAS CONCATENAR JS EN UN ARCHIVO
+// ///////////////////////////////////////////////
+var scripts = [
+	assetsDir + '/bower/wow/dist/wow.min.js',
+	jsDir + '/wowIni.js',
+    assetsDir + '/bower/picturefill/dist/picturefill.min.js',
+    jsDir + '/simple.js'
+];
+
+
+// ///////////////////////////////////////////////
+// RUTAS CONCATENAR CSS EN UN ARCHIVO
+// ///////////////////////////////////////////////
+var fileCSS = [
+    assetsDir + '/bower/animate.css/animate.min.css',
+    CssDir + '/simple.css'
+];
+
+
+// ///////////////////////////////////////////////
+// TAREA  CONCATENAR JAVASCRIPT
+// ///////////////////////////////////////////////
+gulp.task('mergeScripts', function() {
+gulp.src(scripts)
+.pipe(concat('simple.js'))
+.pipe(uglify())
+.pipe(gulp.dest(targetJs));
+});
+
+// ///////////////////////////////////////////////
+// TAREA  CONCATENAR CSS
+// ///////////////////////////////////////////////
+gulp.task('mergeCSS', function() {
+gulp.src(fileCSS)
+.pipe(autoprefixer({
+              browsers: ['last 2 versions'],
+              cascade: false
+          }))
+.pipe(concat('simple.css'))
+.pipe(minifycss())
+.pipe(gulp.dest(targetCss));
+});
+
+
+
+
 
 
 // ////////////////////////////////////////////////
@@ -77,47 +128,13 @@ gulp.task('isis', function() {
 
 
 
-// ////////////////////////////////////////////////
-// Javascript Browserify, Watchify, Babel, React
-// https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
-// ////////////////////////////////////////////////
-
-// add custom browserify options here
-var customOpts = {
-  entries: ['./js/custom.js'],
-  debug: true
-};
-var opts = assign({}, watchify.args, customOpts);
-var b = watchify(browserify(opts)); 
-
-// add transformations here
-b.transform(babelify);
-
-gulp.task('js', bundle); // so you can run `gulp js` to build the file
-b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', gutil.log); // output build logs to terminal
-
-function bundle() {
-  return b.bundle()
-    // log errors if they happen
-    .on('error', gutil.log.bind(gutil, gutil.colors.red(
-       '\n\n*********************************** \n' +
-      'BROWSERIFY ERROR:' +
-      '\n*********************************** \n\n'
-      )))
-    .pipe(source('custom.js'))
-    // optional, remove if you don't need to buffer file contents
-    .pipe(buffer())
-    .pipe(uglify())
-    // optional, remove if you dont want sourcemaps
-    .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
-    // Add transformation tasks to the pipeline here.
-    .pipe(sourcemaps.write('../maps')) // writes .map file
-    .pipe(gulp.dest('./js-compliled/js'))
-    .pipe(reload({stream:true}));
-}
-
-
+// ///////////////////////////////////////////////
+// TAREA  LIMPIAR NUESTRAS CARPETAS DESTINO
+// ///////////////////////////////////////////////
+gulp.task('clean', function() {
+gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css'], {read:false})
+.pipe(clean());
+});
 
 
 
@@ -125,18 +142,25 @@ function bundle() {
 // Tarea sincronizar el navegador
 // ////////////////////////////////////////////////
 gulp.task('php', function() {
-    php.server({ base: '../../', port: 3000, keepalive: true});
+    php.server({ base: '../../', port: 8010, keepalive: true});
 });
 
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"dropbox:8887/dentist/",
+        proxy:"localhost:8888/joomla3",
         port: 3000,
-        open: true,
+        open: false,
         notify: false,
 		//injectChanges: true
     });
 });
+
+// ///////////////////////////////////////////////
+// TAREA  WATCH
+// ///////////////////////////////////////////////
+//gulp.task('watch', ['browserSync'], function() {
+//gulp.watch(jsDir + '/**/*.js', ['mergescripts']);
+//});
 
 
 
@@ -145,15 +169,19 @@ gulp.task('browserSync', function() {
 // ////////////////////////////////////////////////
 gulp.task('watch', function() {
 	
-   gulp.watch('scss/src/**/*.scss', ['styles']);
+   gulp.watch(target.sass_src, ['styles']);
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
    gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
    gulp.watch(target.sass_seblod, ['isis']);
    gulp.watch('scss/panel_admin/**/*.scss', ['isis']);
    gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
+   gulp.watch(jsDir + '/**/*.js', ['mergeScripts']);
+   gulp.watch(jsDir + '/**/*.js').on('change', function () {browserSync.reload();});
+   gulp.watch(CssDir + '/**/*.css', ['mergeCSS']);
+   gulp.watch(CssDir + '/**/*.css').on('change', function () {browserSync.reload();});
 
 });
 
 
-gulp.task('default', ['styles', 'isis', 'js', 'php', 'browserSync', 'watch']);
+gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'isis', 'php', 'browserSync', 'watch']);
 

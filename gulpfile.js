@@ -149,7 +149,7 @@ gulp.task('browserSync', function() {
     browserSync({
         proxy:"localhost:8888/joomla3",
         port: 3000,
-        open: false,
+        open: true,
         notify: false,
 		//injectChanges: true
     });

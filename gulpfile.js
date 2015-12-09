@@ -147,7 +147,7 @@ gulp.task('php', function() {
 
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"localhost:8888/joomla4",
+        proxy:"localhost:8888/joomla5",
         port: 3000,
         open: true,
         notify: false,
@@ -172,7 +172,7 @@ gulp.task('watch', function() {
    gulp.watch(target.sass_src, ['styles']);
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
    gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
-   gulp.watch(target.sass_seblod, ['isis']);
+   gulp.watch(target.sass_seblod, ['styles']);
    gulp.watch('scss/back_end/**/*.scss', ['isis']);
    gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
    gulp.watch(jsDir + '/**/*.js', ['mergeScripts']);

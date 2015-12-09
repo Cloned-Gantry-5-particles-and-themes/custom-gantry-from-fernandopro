@@ -1,4 +1,26 @@
 @import 'dependencies';
 @import "vendor/bourbon/bourbon";
+@import "fonts";
+
+
+
+/********************************************************
+  TEMPLATE
+********************************************************/
+
+
+
+
+/********************************************************
+  RUTAS DESDE SEBLOD  - 3 hacia atrás ../../../
+********************************************************/
+/*@import '../../../seb_minima/positions';*/
+/*@import '../../../seb_minima/positions';*/
+/*@import '../../../seb_minima/positions';*/
+
+
+
+/********************************************************
+ CUSTOM  STYLE    ** IMPORTANTE QUE ESTÉ AL FINAL **
+********************************************************/
 @import "public/styles";
-@import "panel_admin/custom.scss";

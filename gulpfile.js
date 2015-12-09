@@ -18,10 +18,10 @@ var reload        = browserSync.reload;
 // ///////////////////////////////////////////////
 var target = {
 	sass_src        : 'assets/scss/**/*.scss',  // Ruta todos mis archivos sass
+	sass_seblod     : '../../seb_minima/positions/**/*.scss',
 	sass_dest       : 'scss/public',  // Ruta destino después de procesarse sass
-	sass_seblod     : '../../seb_minima/positions/**/*.scss', //Ruta Sass en template minima de Seblod
-	isis_src        : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
-	isis_dest       : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
+	back_src        : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
+	back_dest       : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
 }
 
 var assetsDir = 'assets';
@@ -76,12 +76,28 @@ gulp.src(fileCSS)
 });
 
 
-
-
+// ////////////////////////////////////////////////
+// Tarea Scss  SEBLOD
+// ///////////////////////////////////////////////
+gulp.task('seblod', function() {
+  gulp.src(target.sass_seblod)
+	  .on('error', gutil.log.bind(gutil, gutil.colors.red(
+         '\n\n*********************************** \n' +
+        ' ERROR EN SASS, FERNAN!' +
+        '\n*********************************** \n\n'
+        )))
+      .pipe(autoprefixer({
+              browsers: ['last 2 versions'],
+              cascade: false
+          }))
+	  .pipe(concat('_seblod.scss'))
+      .pipe(gulp.dest(target.sass_dest))
+	  .pipe(reload({stream:true}));    
+});
 
 
 // ////////////////////////////////////////////////
-// Tarea Scss
+// Tarea Scss Assets
 // ///////////////////////////////////////////////
 gulp.task('styles', function() {
   gulp.src(target.sass_src)
@@ -100,13 +116,12 @@ gulp.task('styles', function() {
 });
 
 
-
 // ////////////////////////////////////////////////
 // Panel Admin Isis
 // ///////////////////////////////////////////////
 var sass_Compresion = 'nested'; // nested  -  compressed
-gulp.task('isis', function() {
-  gulp.src(target.isis_src)
+gulp.task('back', function() {
+  gulp.src(target.back_src)
     .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: sass_Compresion}))
       // .on('error', errorlog)
@@ -120,7 +135,7 @@ gulp.task('isis', function() {
               cascade: false
           })) 
     .pipe(sourcemaps.write('../maps'))
-    .pipe(gulp.dest(target.isis_dest))
+    .pipe(gulp.dest(target.back_dest))
 	.pipe(reload({stream:true}));
     
 });
@@ -149,18 +164,11 @@ gulp.task('browserSync', function() {
     browserSync({
         proxy:"localhost:8888/joomla5",
         port: 3000,
-        open: true,
+        open: false,
         notify: false,
 		//injectChanges: true
     });
 });
-
-// ///////////////////////////////////////////////
-// TAREA  WATCH
-// ///////////////////////////////////////////////
-//gulp.task('watch', ['browserSync'], function() {
-//gulp.watch(jsDir + '/**/*.js', ['mergescripts']);
-//});
 
 
 
@@ -172,8 +180,8 @@ gulp.task('watch', function() {
    gulp.watch(target.sass_src, ['styles']);
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
    gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
-   gulp.watch(target.sass_seblod, ['styles']);
-   gulp.watch('scss/back_end/**/*.scss', ['isis']);
+   gulp.watch(target.sass_seblod, ['seblod']);
+   gulp.watch('scss/back_end/**/*.scss', ['back']);
    gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
    gulp.watch(jsDir + '/**/*.js', ['mergeScripts']);
    gulp.watch(jsDir + '/**/*.js').on('change', function () {browserSync.reload();});
@@ -183,5 +191,5 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'isis', 'php', 'browserSync', 'watch']);
+gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'seblod', 'back', 'php', 'browserSync', 'watch']);
 

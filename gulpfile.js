@@ -20,7 +20,7 @@ var target = {
 	sass_src        : 'assets/scss/**/*.scss',  // Ruta todos mis archivos sass
 	sass_dest       : 'scss/public',  // Ruta destino después de procesarse sass
 	sass_seblod     : '../../seb_minima/positions/**/*.scss', //Ruta Sass en template minima de Seblod
-	isis_src        : 'scss/panel_admin/custom.scss', //Ruta archivos Sass isis
+	isis_src        : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
 	isis_dest       : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
 }
 
@@ -116,7 +116,7 @@ gulp.task('isis', function() {
         '\n*********************************** \n\n'
         )))
       .pipe(autoprefixer({
-              browsers: ['last 3 versions'],
+              browsers: ['last 2 versions'],
               cascade: false
           })) 
     .pipe(sourcemaps.write('../maps'))
@@ -142,12 +142,12 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 // Tarea sincronizar el navegador
 // ////////////////////////////////////////////////
 gulp.task('php', function() {
-    php.server({ base: '../../', port: 8010, keepalive: true});
+    php.server({ base: '../../', port: 3002, keepalive: true});
 });
 
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"localhost:8888/joomla3",
+        proxy:"localhost:8888/joomla4",
         port: 3000,
         open: true,
         notify: false,
@@ -173,7 +173,7 @@ gulp.task('watch', function() {
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
    gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
    gulp.watch(target.sass_seblod, ['isis']);
-   gulp.watch('scss/panel_admin/**/*.scss', ['isis']);
+   gulp.watch('scss/back_end/**/*.scss', ['isis']);
    gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
    gulp.watch(jsDir + '/**/*.js', ['mergeScripts']);
    gulp.watch(jsDir + '/**/*.js').on('change', function () {browserSync.reload();});

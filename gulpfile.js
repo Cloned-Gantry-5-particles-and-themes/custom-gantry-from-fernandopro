@@ -1,6 +1,5 @@
 var gulp          = require('gulp');
 var sourcemaps    = require('gulp-sourcemaps');
-var php           = require('gulp-connect-php');
 var sass          = require('gulp-sass');
 var rename        = require("gulp-rename");
 var gutil         = require('gulp-util');
@@ -17,11 +16,12 @@ var reload        = browserSync.reload;
 // RUTAS DE LOS ARCHIVOS
 // ///////////////////////////////////////////////
 var target = {
-	sass_src        : 'assets/scss/**/*.scss',  // Ruta todos mis archivos sass
-	sass_seblod     : '../../seb_minima/positions/**/*.scss',
-	sass_dest       : 'scss/public',  // Ruta destino después de procesarse sass
-	back_src        : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
-	back_dest       : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
+	sass_src         : 'assets/scss/**/*.scss',  // Ruta todos mis archivos sass
+	sass_dest        : 'scss/public',  // Ruta destino después de procesarse sass
+	sass_seblod      : '../../seb_minima/positions/**/*.scss',
+	sass_dest_seblod : 'scss/public',
+	back_src         : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
+	back_dest        : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
 }
 
 var assetsDir = 'assets';
@@ -47,6 +47,7 @@ var scripts = [
 // ///////////////////////////////////////////////
 var fileCSS = [
     assetsDir + '/bower/animate.css/animate.min.css',
+	assetsDir + '/bower/rrssb/css/rrssb.css',
     CssDir + '/simple.css'
 ];
 
@@ -90,8 +91,7 @@ gulp.task('seblod', function() {
               browsers: ['last 2 versions'],
               cascade: false
           }))
-	  .pipe(concat('_seblod.scss'))
-      .pipe(gulp.dest(target.sass_dest))
+      .pipe(gulp.dest(target.sass_dest_seblod))
 	  .pipe(reload({stream:true}));    
 });
 
@@ -152,18 +152,13 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 });
 
 
-
 // ////////////////////////////////////////////////
 // Tarea sincronizar el navegador
 // ////////////////////////////////////////////////
-gulp.task('php', function() {
-    php.server({ base: '../../', port: 3002, keepalive: true});
-});
-
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"localhost:8888/joomla5",
-        port: 3000,
+        proxy:"localhost:8888/joomla1",
+        port: 8000,
         open: false,
         notify: false,
 		//injectChanges: true
@@ -179,17 +174,17 @@ gulp.task('watch', function() {
 	
    gulp.watch(target.sass_src, ['styles']);
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
-   gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
+   //gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
    gulp.watch(target.sass_seblod, ['seblod']);
    gulp.watch('scss/back_end/**/*.scss', ['back']);
    gulp.watch('../../**/*.php').on('change', function () {browserSync.reload();});
    gulp.watch(jsDir + '/**/*.js', ['mergeScripts']);
-   gulp.watch(jsDir + '/**/*.js').on('change', function () {browserSync.reload();});
+   //gulp.watch(jsDir + '/**/*.js').on('change', function () {browserSync.reload();});
    gulp.watch(CssDir + '/**/*.css', ['mergeCSS']);
-   gulp.watch(CssDir + '/**/*.css').on('change', function () {browserSync.reload();});
+   //gulp.watch(CssDir + '/**/*.css').on('change', function () {browserSync.reload();});
 
 });
 
 
-gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'seblod', 'back', 'php', 'browserSync', 'watch']);
+gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'seblod', 'back', 'browserSync', 'watch']);
 

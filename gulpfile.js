@@ -37,6 +37,7 @@ var targetCss = 'css';
 var scripts = [
 	assetsDir + '/bower/wow/dist/wow.min.js',
 	jsDir + '/wowIni.js',
+	jsDir + '/picture_ini.js',
     assetsDir + '/bower/picturefill/dist/picturefill.min.js',
     jsDir + '/simple.js'
 ];

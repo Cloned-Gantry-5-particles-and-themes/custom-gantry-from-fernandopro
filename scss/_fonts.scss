@@ -1,0 +1,14 @@
+/********************************************************
+  INCLUDES
+********************************************************/
+@include font-face('Bloody', 'gantry-theme://fonts/bloody/BLOODY-webfont');
+
+
+/********************************************************
+  CLASE CSS TIPOGRAFÍAS
+********************************************************/
+.letra__bloody {
+	font-family:'Bloody',Helvetica,Arial,sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}

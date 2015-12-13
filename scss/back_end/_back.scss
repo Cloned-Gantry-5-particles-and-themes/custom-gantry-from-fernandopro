@@ -297,7 +297,6 @@ $width_hr               : $anchoImputText;
 		font-size:1em;
 	}
 	
-	
 	.tab_container .tab-content p,
 	.tab_container .tab-content h3 {
 	  animation: fadeInScale 0.7s ease-in-out;
@@ -397,7 +396,7 @@ $width_hr               : $anchoImputText;
 	}
 	
 	/*Tab Activa del ayuda*/
-	.tab_container [id="tab5"]:checked + label {
+	.tab_container [class="tabInfo"]:checked + label {
 		background:$tabInfoColor;
 		box-shadow:none;
 		& .fa{

@@ -39,6 +39,7 @@ var scripts = [
 	jsDir + '/wowIni.js',
 	jsDir + '/picture_ini.js',
     assetsDir + '/bower/picturefill/dist/picturefill.min.js',
+	assetsDir + '/bower/rrssb/js/rrssb.min.js',
     jsDir + '/simple.js'
 ];
 
@@ -158,7 +159,7 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 // ////////////////////////////////////////////////
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"localhost:8888/joomla1",
+        proxy:"dropbox:8887/dentist3",
         port: 8000,
         open: false,
         notify: false,

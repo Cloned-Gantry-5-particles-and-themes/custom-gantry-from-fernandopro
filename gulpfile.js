@@ -22,7 +22,7 @@ var target = {
 	sass_dest_seblod : 'scss/public',
 	back_src         : 'scss/back_end/custom.scss', //Ruta archivos Sass isis
 	back_dest        : '../../../administrator/templates/isis/css' //Ruta archivos Sass isis
-}
+};
 
 var assetsDir = 'assets';
 var jsDir = assetsDir + '/js';
@@ -94,7 +94,7 @@ gulp.task('seblod', function() {
               cascade: false
           }))
       .pipe(gulp.dest(target.sass_dest_seblod))
-	  .pipe(reload({stream:true}));    
+	  .pipe(reload({stream:true}));
 });
 
 
@@ -114,7 +114,7 @@ gulp.task('styles', function() {
           }))
       .pipe(gulp.dest(target.sass_dest))
 	  .pipe(reload({stream:true}));
-    
+
 });
 
 
@@ -135,11 +135,11 @@ gulp.task('back', function() {
       .pipe(autoprefixer({
               browsers: ['last 2 versions'],
               cascade: false
-          })) 
+          }))
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(target.back_dest))
 	.pipe(reload({stream:true}));
-    
+
 });
 
 
@@ -173,7 +173,7 @@ gulp.task('browserSync', function() {
 // Tarea Reloj escucha
 // ////////////////////////////////////////////////
 gulp.task('watch', function() {
-	
+
    gulp.watch(target.sass_src, ['styles']);
    gulp.watch('scss/custom.scss').on('change', function () {browserSync.reload();});
    //gulp.watch('css-compiled/*.css').on('change', function () {browserSync.reload();});
@@ -189,4 +189,3 @@ gulp.task('watch', function() {
 
 
 gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'seblod', 'back', 'browserSync', 'watch']);
-

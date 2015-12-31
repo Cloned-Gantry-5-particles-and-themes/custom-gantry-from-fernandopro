@@ -1,1 +1,14 @@
 /*STYLES*/
+
+/*FOOTER*/
+#g-copyright{
+	@include breakpoint(mobile-only) {
+		text-align:center;
+		& #g-totop{
+			background: $accent-color-1;
+            padding: 8px 10px;
+            border-radius: 1em;
+            color: #fff;
+		}
+	}
+}

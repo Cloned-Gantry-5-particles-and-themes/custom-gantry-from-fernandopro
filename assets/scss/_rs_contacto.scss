@@ -1,12 +1,12 @@
 /*FORMULARIO DE CONTACTO*/
 //FONDO
-$colorFondo             :   none;
-$paddingFondo           :   none;
-$bordeFondo             :   none;
+$colorFondo             :   #F5F5F5;
+$paddingFondo           :   5px 10px;
+$bordeFondo             :   1px solid #eae9e9;
 
 //CAMPOS
 $colorFondoCampos       :   #FFF;
-$bordesCampos           :   1px solid #eae9e9;
+$bordesCampos           :   none;
 $placeholderCampos      :   #333;
 $colorTextoCampos       :   $accent-color-1;
 
@@ -256,6 +256,14 @@ $bordeMapa              :   none;
 	color: $colorAvisoIndividual !important;
 	@include breakpoint(mobile-only) {
 		width:200px;
+	}
+}
+
+.contactoFoto{
+	text-align:center;
+	& .g-content{
+		margin:0;
+	    padding:0;
 	}
 }
 

@@ -1,0 +1,38 @@
+/*MODAL PALETA COLORES*/
+.colores{
+	cursor:pointer;
+	position: absolute;
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:1000;
+	@include breakpoint(mobile-only) {
+		display:none;
+	}
+	& .dropdown-menu{
+		background-color:#333;
+	    color:#F1F1F1;
+	    & .blqColoreWeb{
+			max-height: 350px;
+		    overflow-y: scroll;
+	        padding:0 25px;
+			& .colorImages{
+				display:flex;
+			    flex-wrap:wrap;
+			    justify-content: space-between;
+			    align-items:center;
+			    & > div{
+					text-align:center;
+				    width: calc(50% - 2em);
+				    margin:1em;
+				    @include breakpoint(mobile-only) {
+						width: calc(100% - 1em);
+					}
+				}
+			}
+	        @include breakpoint(no-mobile) {
+				width:500px;
+			}
+		}
+	}
+}

@@ -28,6 +28,11 @@
 				    @include breakpoint(mobile-only) {
 						width: calc(100% - 1em);
 					}
+					& strong{
+						display:inline-block;
+						padding-top:10px;
+						color:lighten(#4d4d4d,15%);
+					}
 				}
 			}
 	        @include breakpoint(no-mobile) {

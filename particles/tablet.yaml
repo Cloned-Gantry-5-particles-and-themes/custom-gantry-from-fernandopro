@@ -1,7 +1,7 @@
 name: P - Tablet
 description: Display a module position in Tablet.
 type: particle
-icon: fa-bolt
+icon: fa-tablet
 hidden: false
 
 form:

@@ -1,7 +1,7 @@
 name: P - EscritorioTablet
 description: Display a module position in Escritorio-Tablet.
 type: particle
-icon: fa-bolt
+icon: fa-television
 hidden: false
 
 form:

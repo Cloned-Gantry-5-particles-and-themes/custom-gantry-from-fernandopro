@@ -1,7 +1,7 @@
 name: P - movil
 description: Display a module position in Movil.
 type: particle
-icon: fa-bolt
+icon: fa-phone
 hidden: false
 
 form:

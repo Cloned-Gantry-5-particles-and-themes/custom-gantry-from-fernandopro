@@ -1,4 +1,6 @@
 /*MODAL PALETA COLORES*/
+$colorLetra      : lighten(#4d4d4d,15%);
+
 .colores{
 	cursor:pointer;
 	position: absolute;
@@ -10,28 +12,60 @@
 		display:none;
 	}
 	& .dropdown-menu{
+		max-height: 350px;
+		overflow-y: scroll;
 		background-color:#333;
-	    color:#F1F1F1;
+	    color:$colorLetra;
+		
+		& .cabecera{
+			color:$colorLetra;
+			padding:0 30px;
+			& .video{
+				margin-top:20px;
+				& a{
+					color:$colorLetra;
+					&:hover{
+						color:#DF5745;
+					}
+				}
+				& span{
+					font-size:.8em;
+					margin-top:5px;
+					display:inline-block;
+				}
+			}
+		}
+		& hr{
+			border-color:lighten(#4d4d4d,4%);
+			border-width:thin;
+			border-top: inherit;
+			margin:0;
+			margin-bottom:0;
+		}
+		& .tituloColor{
+			margin-top:10px;
+			color:$colorLetra;
+			text-align:center;
+			font-size:2rem;
+		}
 	    & .blqColoreWeb{
-			max-height: 350px;
-		    overflow-y: scroll;
-	        padding:0 25px;
-			& .colorImages{
+			 padding:0 50px;
+			 & .colorImages{
 				display:flex;
 			    flex-wrap:wrap;
-			    justify-content: space-between;
+			    justify-content: flex-start;
 			    align-items:center;
 			    & > div{
 					text-align:center;
-				    width: calc(50% - 2em);
-				    margin:1em;
+				    width: calc(33.3333% - 1em);
+				    margin:.5em;
 				    @include breakpoint(mobile-only) {
 						width: calc(100% - 1em);
 					}
 					& strong{
 						display:inline-block;
 						padding-top:10px;
-						color:lighten(#4d4d4d,15%);
+						color:$colorLetra;
 					}
 				}
 			}

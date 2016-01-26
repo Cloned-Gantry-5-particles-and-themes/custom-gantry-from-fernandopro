@@ -1,0 +1,36 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+{% block particle %}
+
+       {% if particle.responsive == 'g-todo' %}
+          {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
+       {% endif %}
+
+       {% if particle.responsive == 'g-escritorio' %}
+          {% if gantry.mobile_detect.isMobile() %}
+          {% else %}
+            {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
+          {% endif %}
+      {% endif %}
+
+      {% if particle.responsive == 'g-escritorio_tablet' %}
+         {% if gantry.mobile_detect.isMobile() and not gantry.mobile_detect.isTablet() %}
+         {% else %}
+              {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
+         {% endif %}
+      {% endif %}
+
+      {% if particle.responsive == 'g-tablet' %}
+         {% if gantry.mobile_detect.isTablet() %}
+             {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
+         {% else %}
+         {% endif %}
+      {% endif %}
+
+      {% if particle.responsive == 'g-movil' %}
+         {% if gantry.mobile_detect.isMobile() and not gantry.mobile_detect.isTablet() %}
+           {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
+         {% else %}
+         {% endif %}
+      {% endif %}
+
+{% endblock %}

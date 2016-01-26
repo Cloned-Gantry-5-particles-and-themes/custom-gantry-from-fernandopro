@@ -1,0 +1,37 @@
+name: Multi-Dispositivo
+description: Partícula Multi-Dispositivo Mobile Detect.
+type: particle
+icon: fa-bolt
+hidden: false
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable module positions.
+      default: true
+
+    key:
+      type: input.text
+      label: Posición
+      description: Elija el nombre para esta posición
+      pattern: '[A-Za-z0-9-]+'
+      overridable: false
+
+    responsive:
+      type: select.select
+      options:
+        g-todo: Todos los dispositivos
+        g-escritorio: Escritorio
+        g-escritorio_tablet: Escritorio Tablet
+        g-tablet: Tablet
+        g-movil: Movil
+      label: Dispositivo
+      description: Elija donde se mostrará esta posición.
+
+    chrome:
+      type: input.text
+      label: Chrome
+      description: Module chrome in this position.
+      placeholder: gantry

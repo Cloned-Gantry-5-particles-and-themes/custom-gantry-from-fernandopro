@@ -1,7 +1,0 @@
-{% extends '@nucleus/partials/particle.html.twig' %}
-{% block particle %}
-  {% if gantry.mobile_detect.isTablet() %}
-    {{ gantry.platform.displayModules(particle.key, {'style': particle.chrome|default('gantry')})|raw }}
-    {% else %}
-  {% endif %}
-{% endblock %}

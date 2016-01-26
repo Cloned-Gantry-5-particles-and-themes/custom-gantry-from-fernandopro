@@ -8,64 +8,23 @@ div.seb_css3{ background-color:transparent !important;}
 @import 'back';
 @import 'infoWeb';
 
+/********************************************************
+  PANEL GANTRY 5 
+********************************************************/
+$multi_posicion            : #C21733;
+
+
+.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="multi-posicion"]
+/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="escritorio"]*/{
+	background:$multi_posicion; 
+	color:lighten($multi_posicion,50%);
+	& span{
+		color:lighten($multi_posicion,50%);
+	}
+}
 
 
 /********************************************************
   RUTAS DESDE SEBLOD  - 1 hacia atrás ../
 ********************************************************/
 /*@import '../public/;*/
-
-
-
-
-
-
-
-
-/********************************************************
-  PANEL GANTRY 5 
-********************************************************/
-$colorEscritorio           : #E87703;
-$colorEscritorio_tablet    : #FFA409;
-$colorTablet               : #FFD503;
-$colorMovil                : #C21733;
-
-.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="escritorio"]
-/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="escritorio"]*/{
-	background:$colorEscritorio; 
-	color:lighten($colorEscritorio,50%);
-	& span{
-		color:lighten($colorEscritorio,50%);
-	}
-}
-
-
-.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="escritorio-tablet"]
-/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="escritorio-tablet"]*/{
-	background:$colorEscritorio_tablet; 
-	color:lighten($colorEscritorio_tablet,50%);
-	& span{
-		color:lighten($colorEscritorio_tablet,50%);
-	}
-}
-
-
-.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="tablet"]
-/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="tablet"]*/{
-	background:$colorTablet; 
-	color:lighten($colorTablet,50%);
-	& span{
-		color:lighten($colorTablet,50%);
-	}
-}
-
-
-.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="movil"]
-/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="movil"]*/{
-	background:$colorMovil; 
-	color:lighten($colorMovil,50%);
-	& span{
-		color:lighten($colorMovil,50%);
-	}
-}
-

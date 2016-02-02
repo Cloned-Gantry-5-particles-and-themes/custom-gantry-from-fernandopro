@@ -4,6 +4,8 @@
 #content > div > div > div.span12 .copyright, .com_cck .header{ display:none !important;}
 .admin.com_cck.view-form {background-color: #F0F0F0 !important;}
 div.seb_css3{ background-color:transparent !important;}
+#menu > li > ul > li > a[href="index.php?option=com_templates"], #menu > li > ul > li > a[href="index.php?option=com_gantry5"] 
+{display:none !important;}
 @import'back_responsive';
 @import 'back';
 @import 'infoWeb';

@@ -121,7 +121,7 @@ gulp.task('styles', function() {
 // ////////////////////////////////////////////////
 // Panel Admin Isis
 // ///////////////////////////////////////////////
-var sass_Compresion = 'nested'; // nested  -  compressed
+var sass_Compresion = 'compressed'; // nested  -  compressed
 gulp.task('back', function() {
   gulp.src(target.back_src)
     .pipe(sourcemaps.init())
@@ -159,7 +159,7 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 // ////////////////////////////////////////////////
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"dropbox:8887/dentist3",
+        proxy:"produccion:8887/dentist",
         port: 8000,
         open: false,
         notify: false,
@@ -188,4 +188,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'styles', 'seblod', 'back', 'browserSync', 'watch']);
+gulp.task('default', ['clean', 'mergeScripts', 'mergeCSS', 'back', 'seblod', 'styles', 'browserSync', 'watch']);

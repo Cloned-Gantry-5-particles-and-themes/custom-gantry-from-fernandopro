@@ -4,7 +4,7 @@
 #content > div > div > div.span12 .copyright, .com_cck .header{ display:none !important;}
 .admin.com_cck.view-form {background-color: #F0F0F0 !important;}
 div.seb_css3{ background-color:transparent !important;}
-#menu > li > ul > li > a[href="index.php?option=com_templates"], #menu > li > ul > li > a[href="index.php?option=com_gantry5"] 
+#menu > li > ul > li > a[href="index.php?option=com_templates"], #menu > li > ul > li > a[href="index.php?option=com_gantry5"]
 {display:none !important;}
 .container-logo {background:url('/images/logo_tdweb_joomla.png');position:relative;top:2px;width:125px;height:31px;& img{display:none !important;}}
 @import'back_responsive';
@@ -12,17 +12,24 @@ div.seb_css3{ background-color:transparent !important;}
 @import 'infoWeb';
 
 /********************************************************
-  PANEL GANTRY 5 
+  PANEL GANTRY 5
 ********************************************************/
 $multi_posicion: #C21733;
 .com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="multi-posicion"]
 /*#g5-container .g5-lm-particles-picker li[data-lm-subtype="multi-posicion"]*/{
-	background:$multi_posicion; 
+	background:$multi_posicion;
 	color:lighten($multi_posicion,50%);
 	& span{
 		color:lighten($multi_posicion,50%);
 	}
 }
+.inner-params{
+  & > div.input-fuente{
+    background-color: rgba(#6da9db, 0.1);
+    display: inline-block;
+  }
+}
+
 
 
 /********************************************************

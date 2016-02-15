@@ -1,5 +1,7 @@
 @import 'dependencies';
 @import "vendor/bourbon/bourbon";
+@import "nucleus/theme/mixins/typography";
+@import "public/mixins";
 @import "fonts";
 
 
@@ -8,7 +10,7 @@
   TEMPLATE
 ********************************************************/
 /*@import "public/";*/
-@import "public/_rs_contacto.scss";
+@import "public/rs_contacto";
 
 
 
@@ -16,12 +18,12 @@
   PARTICLES
 ********************************************************/
 /*@import "public/particles";*/
-@import "public/particles/_contact.scss";
+@import "public/particles/contact";
 
 
 
 /********************************************************
-  RUTAS SEBLOD 
+  RUTAS SEBLOD
 ********************************************************/
 /*@import "public/";*/
 

@@ -1,0 +1,34 @@
+@mixin background-image-tdweb($color,$image,$repeat,$size,$position) {
+	background-color: $color;@if $color ==  #fffff1 {background-color: $accent-color-1;}@if $color ==  #fffff2
+	{background-color: $accent-color-2;}@if $color ==  #fffff3 {background-color: $accent-color-3;}@if $color ==  #fffff4
+	{background-color: $accent-color-4;}
+	@if $image == '' {}@else{background-image:url($image);}
+	@if $image == '' {}@else{background-repeat: (#{$repeat});}
+	@if $image == '' {}@else{background-size: (#{$size});}
+	@if $image == '' {}@else{background-position:$position;}
+}
+
+
+@mixin background-color-tdweb($bg-color) {
+	background-color: $bg-color;@if $bg-color ==  #fffff1 {background-color: $accent-color-1;}@if $bg-color ==  #fffff2
+	{background-color: $accent-color-2;}@if $bg-color ==  #fffff3 {background-color: $accent-color-3;}@if $color ==  #fffff4
+	{background-color: $accent-color-4;}
+}
+
+
+@mixin color-tdweb($color) {
+	color: $color;@if $color ==  #fffff1 {color: $accent-color-1;}@if $color ==  #fffff2
+	{color: $accent-color-2;}@if $color ==  #fffff3 {color: $accent-color-3;}@if $color ==  #fffff4
+	{background-color: $accent-color-4;}
+}
+
+
+@mixin font-family-tdweb($var,$fuente1,$fuente2,$fuente3) {
+	@if $var == '1' {
+    font-family: get-font-family($fuente1);
+  }@else if $var == '2' {
+    font-family: get-font-family($fuente2);
+  }@else if $var == '3' {
+    font-family: get-font-family($fuente3);
+  }
+}

@@ -1,17 +1,18 @@
+// Tipografía por defecto del template
+$template-font: 'roboto';
 @include import-font($base-extra-font);
-$base-font: ("#{$base-base}"), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !default;
-$base-extra-font: ("#{$base-base}"), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !default;
+$base-font: ("#{$template-font}") !default;
+$base-extra-font: ("#{$template-font}") !default;
+
 /********************************************************
   INCLUDES
 ********************************************************/
 @include font-face('Bloody', 'gantry-theme://fonts/bloody/BLOODY-webfont');
-
-
 /********************************************************
   CLASES TIPOGRAFÍAS  @extend
 ********************************************************/
 .letra__bloody {
-	font-family:'Bloody',Helvetica,Arial,sans-serif;
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Bloody',Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }

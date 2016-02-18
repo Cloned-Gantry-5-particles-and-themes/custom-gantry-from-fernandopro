@@ -63,69 +63,130 @@
   @else if $color == #fffff4 {
     color: $accent-color-4;
   }
+  @else if $color == '' {}
   @else {
     color: $color;
   }
 }
 @mixin font-family-tdweb ($font, $size-l, $size-d, $size-t, $size-m) {
   @if $font == '' {
-    font: $size-l get-font-family($base-font), sans-serif;
-    @include breakpoint(desktop-range) {
-      font: $size-d get-font-family($base-font), sans-serif;
-    }
-    @include breakpoint(tablet-range) {
-      font: $size-t get-font-family($base-font), sans-serif;
-    }
-    @include breakpoint(mobile-only) {
-      font: $size-m get-font-family($base-font), sans-serif;
-    }
-  }
-  @if $font == '1' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-heading-font), sans-serif;
+      font: $size-l get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-heading-font), sans-serif;
+        font: $size-d get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-heading-font), sans-serif;
+        font: $size-t get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-heading-font), sans-serif;
+        font: $size-m get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+  }
+  @if $font == '0' {
+    @if $size-l == '' {}
+    @else {
+      font: $size-l get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    }
+    @if $size-d == '' {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: $size-d get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: $size-t get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: $size-m get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+  }
+  @if $font == '1' {
+    @if $size-l == '' {}
+    @else {
+      font: $size-l get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    }
+    @if $size-d == '' {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: $size-d get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: $size-t get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: $size-m get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
       }
     }
   }
   @if $font == '2' {
-    font: $size-l get-font-family($base-body-font), sans-serif;
-    @include breakpoint(desktop-range) {
-      font: $size-d get-font-family($base-body-font), sans-serif;
+    @if $size-l == '' {}
+    @else {
+      font: $size-l get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     }
-    @include breakpoint(tablet-range) {
-      font: $size-t get-font-family($base-body-font), sans-serif;
+    @if $size-d == '' {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: $size-d get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
     }
-    @include breakpoint(mobile-only) {
-      font: $size-m get-font-family($base-body-font), sans-serif;
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: $size-t get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: $size-m get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
     }
   }
   @if $font == '3' {
-    font: $size-l get-font-family($base-extra-font), sans-serif;
-    @include breakpoint(desktop-range) {
-      font: $size-d get-font-family($base-extra-font), sans-serif;
+    @if $size-l == '' {}
+    @else {
+      font: $size-l get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     }
-    @include breakpoint(tablet-range) {
-      font: $size-t get-font-family($base-extra-font), sans-serif;
+    @if $size-d == '' {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: $size-d get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
     }
-    @include breakpoint(mobile-only) {
-      font: $size-m get-font-family($base-extra-font), sans-serif;
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: $size-t get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: $size-m get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      }
     }
   }
 }

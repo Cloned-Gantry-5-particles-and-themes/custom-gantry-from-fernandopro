@@ -1,3 +1,6 @@
+@include import-font($base-extra-font);
+$base-font: ("#{$base-base}"), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !default;
+$base-extra-font: ("#{$base-base}"), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !default;
 /********************************************************
   INCLUDES
 ********************************************************/

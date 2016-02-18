@@ -1,34 +1,131 @@
-@mixin background-image-tdweb($color,$image,$repeat,$size,$position) {
-	background-color: $color;@if $color ==  #fffff1 {background-color: $accent-color-1;}@if $color ==  #fffff2
-	{background-color: $accent-color-2;}@if $color ==  #fffff3 {background-color: $accent-color-3;}@if $color ==  #fffff4
-	{background-color: $accent-color-4;}
-	@if $image == '' {}@else{background-image:url($image);}
-	@if $image == '' {}@else{background-repeat: (#{$repeat});}
-	@if $image == '' {}@else{background-size: (#{$size});}
-	@if $image == '' {}@else{background-position:$position;}
+@mixin background-image-tdweb($color, $image, $repeat, $size, $position) {
+  @if $color == #fffff1 {
+    background-color: $accent-color-1;
+  }
+  @else if $color == #fffff2 {
+    background-color: $accent-color-2;
+  }
+  @else if $color == #fffff3 {
+    background-color: $accent-color-3;
+  }
+  @else if $color == #fffff4 {
+    background-color: $accent-color-4;
+  }
+  @else {
+    background-color: $color;
+  }
+  @if $image == '' {}
+  @else {
+    background-image: url($image);
+  }
+  @if $repeat == '' {}
+  @else if $repeat == '0' {}
+  @else {
+    background-repeat: (#{$repeat});
+  }
+  @if $size == '' {}
+  @else if $size == '0' {}
+  @else {
+    background-size: (#{$size});
+  }
+  @if $position == '' {}
+  @else {
+    background-position: $position;
+  }
 }
-
-
 @mixin background-color-tdweb($bg-color) {
-	background-color: $bg-color;@if $bg-color ==  #fffff1 {background-color: $accent-color-1;}@if $bg-color ==  #fffff2
-	{background-color: $accent-color-2;}@if $bg-color ==  #fffff3 {background-color: $accent-color-3;}@if $color ==  #fffff4
-	{background-color: $accent-color-4;}
+  @if $bg-color == #fffff1 {
+    background-color: $accent-color-1;
+  }
+  @else if $bg-color == #fffff2 {
+    background-color: $accent-color-2;
+  }
+  @else if $bg-color == #fffff3 {
+    background-color: $accent-color-3;
+  }
+  @else if $bg-color == #fffff4 {
+    background-color: $accent-color-4;
+  }
+  @else {
+    background-color: $bg-color;
+  }
 }
-
-
 @mixin color-tdweb($color) {
-	color: $color;@if $color ==  #fffff1 {color: $accent-color-1;}@if $color ==  #fffff2
-	{color: $accent-color-2;}@if $color ==  #fffff3 {color: $accent-color-3;}@if $color ==  #fffff4
-	{background-color: $accent-color-4;}
+  @if $color == #fffff1 {
+    color: $accent-color-1;
+  }
+  @else if $color == #fffff2 {
+    color: $accent-color-2;
+  }
+  @else if $color == #fffff3 {
+    color: $accent-color-3;
+  }
+  @else if $color == #fffff4 {
+    color: $accent-color-4;
+  }
+  @else {
+    color: $color;
+  }
 }
-
-
-@mixin font-family-tdweb($var,$fuente1,$fuente2,$fuente3) {
-	@if $var == '1' {
-    font-family: get-font-family($fuente1);
-  }@else if $var == '2' {
-    font-family: get-font-family($fuente2);
-  }@else if $var == '3' {
-    font-family: get-font-family($fuente3);
+@mixin font-family-tdweb ($font, $size-l, $size-d, $size-t, $size-m) {
+  @if $font == '' {
+    font: $size-l get-font-family($base-font), sans-serif;
+    @include breakpoint(desktop-range) {
+      font: $size-d get-font-family($base-font), sans-serif;
+    }
+    @include breakpoint(tablet-range) {
+      font: $size-t get-font-family($base-font), sans-serif;
+    }
+    @include breakpoint(mobile-only) {
+      font: $size-m get-font-family($base-font), sans-serif;
+    }
+  }
+  @if $font == '1' {
+    @if $size-l == '' {}
+    @else {
+      font: $size-l get-font-family($base-heading-font), sans-serif;
+    }
+    @if $size-d == '' {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: $size-d get-font-family($base-heading-font), sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: $size-t get-font-family($base-heading-font), sans-serif;
+      }
+    }
+    @if $size-t == '' {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: $size-m get-font-family($base-heading-font), sans-serif;
+      }
+    }
+  }
+  @if $font == '2' {
+    font: $size-l get-font-family($base-body-font), sans-serif;
+    @include breakpoint(desktop-range) {
+      font: $size-d get-font-family($base-body-font), sans-serif;
+    }
+    @include breakpoint(tablet-range) {
+      font: $size-t get-font-family($base-body-font), sans-serif;
+    }
+    @include breakpoint(mobile-only) {
+      font: $size-m get-font-family($base-body-font), sans-serif;
+    }
+  }
+  @if $font == '3' {
+    font: $size-l get-font-family($base-extra-font), sans-serif;
+    @include breakpoint(desktop-range) {
+      font: $size-d get-font-family($base-extra-font), sans-serif;
+    }
+    @include breakpoint(tablet-range) {
+      font: $size-t get-font-family($base-extra-font), sans-serif;
+    }
+    @include breakpoint(mobile-only) {
+      font: $size-m get-font-family($base-extra-font), sans-serif;
+    }
   }
 }

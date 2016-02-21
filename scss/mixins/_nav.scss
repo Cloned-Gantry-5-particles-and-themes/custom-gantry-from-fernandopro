@@ -1,0 +1,119 @@
+@import "../../custom/scss/public/_mixins.scss";
+%dropdown-column {
+	width: $menu-col-width;
+}
+
+// Main Nav Colors
+@mixin main-nav-colors($section-background: $navigation-background, $section-text-color: $navigation-text-color, $section-active-background: $main-background, $section-active-text-color: $main-text-color) {
+
+	h1, h2, h3, h4, h5, h6, strong {
+		color: $section-text-color;
+	}
+
+	.g-toplevel {
+		> li {
+			> .g-menu-item-container {
+				@include color-tdweb ($section-text-color);
+			}
+			&:not(.g-menu-item-type-particle):not(.g-menu-item-type-module) {
+				&:hover {
+					@include background-color-tdweb ($hsl,$section-background,15%);
+				}
+
+				&.active {
+					@include background-color-tdweb ($section-active-background);
+
+					> .g-menu-item-container {
+						@include color-tdweb ($section-active-text-color);
+					}
+
+					&.g-selected {
+						@include background-color-tdweb ($hsl,$section-background, 6%);
+
+						> .g-menu-item-container {
+							@include color-tdweb ($section-text-color);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.g-dropdown {
+		@include background-color-tdweb ($hsl,$section-background, 6%);
+	}
+
+	.g-sublevel {
+		> li {
+			> .g-menu-item-container {
+				@include color-tdweb ($section-text-color);
+			}
+
+			&:not(.g-menu-item-type-particle):not(.g-menu-item-type-module) {
+				&:hover, &.active {
+					@include background-color-tdweb ($hsl,$section-background, 10%);
+				}
+			}
+		}
+	}
+}
+
+// Touch Indicators
+@mixin main-nav-indicators($section-background: $navigation-background, $section-text-color: $navigation-text-color) {
+	.g-menu-hastouch {
+		.g-toplevel {
+			> li {
+				&.g-menu-item-link-parent {
+					> .g-menu-item-container {
+						> .g-menu-parent-indicator {
+							border: 1px solid lighten($section-background, 6%);
+							@include background-color-tdweb ($hsl,$section-background, 4%);
+							&:hover {
+								@include background-color-tdweb ($hsl,$section-background, 8%);
+							}
+							border-radius: $core-border-radius;
+							margin: -0.2rem 0 -0.2rem 0.5rem;
+							padding: 0.2rem;
+							&:after {
+								text-align: center;
+							}
+						}
+					}
+				}
+				&.active {
+					&.g-menu-item-link-parent {
+						> .g-menu-item-container {
+							> .g-menu-parent-indicator {
+								@include color-tdweb ($section-text-color);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.g-menu-hastouch .g-standard, .g-fullwidth {
+		.g-sublevel {
+			> li {
+				&.g-menu-item-link-parent {
+					> .g-menu-item-container {
+						> .g-menu-parent-indicator {
+							border: 1px solid lighten($section-background, 6%);
+							@include background-color-tdweb ($hsl,$section-background, 4%);
+							&:hover {
+								@include background-color-tdweb ($hsl,$section-background, 8%);
+							}
+							border-radius: $core-border-radius;
+							padding: 0.1rem;
+							margin-top: -0.1rem;
+							margin-right: -0.1rem;
+							&:after {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

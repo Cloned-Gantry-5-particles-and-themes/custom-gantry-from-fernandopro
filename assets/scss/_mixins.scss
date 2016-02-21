@@ -1,19 +1,4 @@
-@mixin background-image-tdweb($color, $image, $repeat, $size, $position) {
-  @if $color == #fffff1 {
-    background-color: $accent-color-1;
-  }
-  @else if $color == #fffff2 {
-    background-color: $accent-color-2;
-  }
-  @else if $color == #fffff3 {
-    background-color: $accent-color-3;
-  }
-  @else if $color == #fffff4 {
-    background-color: $accent-color-4;
-  }
-  @else {
-    background-color: $color;
-  }
+@mixin background-image-tdweb($image, $repeat, $size, $position) {
   @if $image == '' {}
   @else {
     background-image: url($image);
@@ -33,159 +18,273 @@
     background-position: $position;
   }
 }
-@mixin background-color-tdweb($bg-color) {
-  @if $bg-color == #fffff1 {
-    background-color: $accent-color-1;
+
+
+@mixin background-color-tdweb($bg-color: $bg-color2, $hsl:'0', $porcent: $porcent2) {
+  @if $hsl == '0' {
+    @if $bg-color == #fffff1 {
+      background-color: $accent-color-1;
+    }
+    @else if $bg-color == #fffff2 {
+      background-color: $accent-color-2;
+    }
+    @else if $bg-color == #fffff3 {
+      background-color: $accent-color-3;
+    }
+    @else if $bg-color == #fffff4 {
+      background-color: $accent-color-4;
+    }
+    @else {
+      background-color: $bg-color;
+    }
   }
-  @else if $bg-color == #fffff2 {
-    background-color: $accent-color-2;
+  @if $hsl == '1' {
+    @if $bg-color == #fffff1 {
+      background-color: darken($accent-color-1, $porcent);
+    }
+    @else if $bg-color == #fffff2 {
+      background-color: darken($accent-color-2, $porcent);
+    }
+    @else if $bg-color == #fffff3 {
+      background-color: darken($accent-color-3, $porcent);
+    }
+    @else if $bg-color == #fffff4 {
+      background-color: darken($accent-color-4, $porcent);
+    }
+    @else {
+      background-color: darken($bg-color, $porcent);
+    }
   }
-  @else if $bg-color == #fffff3 {
-    background-color: $accent-color-3;
+  @if $hsl == '2' {
+    @if $bg-color == #fffff1 {
+      background-color: lighten($accent-color-1, $porcent);
+    }
+    @else if $bg-color == #fffff2 {
+      background-color: lighten($accent-color-2, $porcent);
+    }
+    @else if $bg-color == #fffff3 {
+      background-color: lighten($accent-color-3, $porcent);
+    }
+    @else if $bg-color == #fffff4 {
+      background-color: lighten($accent-color-4, $porcent);
+    }
+    @else {
+      background-color: lighten($bg-color, $porcent);
+    }
   }
-  @else if $bg-color == #fffff4 {
-    background-color: $accent-color-4;
-  }
-  @else {
-    background-color: $bg-color;
+
+  @if $hsl == '3' {
+    @if $bg-color == #fffff1 {
+      background-color: invert($accent-color-1);
+    }
+    @else if $bg-color == #fffff2 {
+      background-color: invert($accent-color-2);
+    }
+    @else if $bg-color == #fffff3 {
+      background-color: invert($accent-color-3);
+    }
+    @else if $bg-color == #fffff4 {
+      background-color: invert($accent-color-4);
+    }
+    @else {
+      background-color: invert($bg-color);
+    }
   }
 }
-@mixin color-tdweb($color) {
-  @if $color == #fffff1 {
-    color: $accent-color-1;
+
+
+@mixin color-tdweb($color: $color2, $hsl:'0', $porcent: $porcent2) {
+  @if $hsl == '0' {
+    @if $color == #fffff1 {
+      color: $accent-color-1;
+    }
+    @else if $color == #fffff2 {
+      color: $accent-color-2;
+    }
+    @else if $color == #fffff3 {
+      color: $accent-color-3;
+    }
+    @else if $color == #fffff4 {
+      color: $accent-color-4;
+    }
+    @else {
+      color: $color;
+    }
   }
-  @else if $color == #fffff2 {
-    color: $accent-color-2;
+  @if $hsl == '1' {
+    @if $color == #fffff1 {
+      color: darken($accent-color-1, $porcent);
+    }
+    @else if $color == #fffff2 {
+      color: darken($accent-color-2, $porcent);
+    }
+    @else if $color == #fffff3 {
+      color: darken($accent-color-3, $porcent);
+    }
+    @else if $color == #fffff4 {
+      color: darken($accent-color-4, $porcent);
+    }
+    @else {
+      color: darken($color, $porcent);
+    }
   }
-  @else if $color == #fffff3 {
-    color: $accent-color-3;
+  @if $hsl == '2' {
+    @if $color == #fffff1 {
+      color: lighten($accent-color-1, $porcent);
+    }
+    @else if $color == #fffff2 {
+      color: lighten($accent-color-2, $porcent);
+    }
+    @else if $color == #fffff3 {
+      color: lighten($accent-color-3, $porcent);
+    }
+    @else if $color == #fffff4 {
+      color: lighten($accent-color-4, $porcent);
+    }
+    @else {
+      color: lighten($color, $porcent);
+    }
   }
-  @else if $color == #fffff4 {
-    color: $accent-color-4;
-  }
-  @else if $color == '' {}
-  @else {
-    color: $color;
+
+  @if $hsl == '3' {
+    @if $color == #fffff1 {
+      background-color: invert($accent-color-1);
+    }
+    @else if $color == #fffff2 {
+      background-color: invert($accent-color-2);
+    }
+    @else if $color == #fffff3 {
+      background-color: invert($accent-color-3);
+    }
+    @else if $color == #fffff4 {
+      color: invert($accent-color-4);
+    }
+    @else {
+      color: invert($color);
+    }
   }
 }
+
+
+
 @mixin font-family-tdweb ($font, $size-l, $size-d, $size-t, $size-m) {
   @if $font == '' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font: $size-l get-font-family($font2);
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-d get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-t get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-m get-font-family($font2);
       }
     }
   }
   @if $font == '0' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font: $size-l get-font-family($font2);
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-d get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-t get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-m get-font-family($font2);
       }
     }
   }
   @if $font == '1' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font: $size-l get-font-family($font1);
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-d get-font-family($font1);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-t get-font-family($font1);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-heading-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-m get-font-family($font1);
       }
     }
   }
   @if $font == '2' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font: $size-l get-font-family($font2);
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-d get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-t get-font-family($font2);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-body-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-m get-font-family($font2);
       }
     }
   }
   @if $font == '3' {
     @if $size-l == '' {}
     @else {
-      font: $size-l get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font: $size-l get-font-family($font3);
     }
     @if $size-d == '' {}
     @else {
       @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-d get-font-family($font3);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-t get-font-family($font3);
       }
     }
     @if $size-t == '' {}
     @else {
       @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($base-extra-font), "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font: $size-m get-font-family($font3);
       }
     }
   }

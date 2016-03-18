@@ -37,5 +37,5 @@
  CUSTOM    ** IMPORTANTE QUE ESTÉ AL FINAL **
 ********************************************************/
 @import "public/styles";
-@import "public/paleta_colores";
+@if $accent-panel == 1 { @import "public/paleta_colores";}
 @import "ruben";

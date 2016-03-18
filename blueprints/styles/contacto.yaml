@@ -1,0 +1,163 @@
+name: MAIN | CONTACTO
+description:
+type: S6-CUERPO
+
+form:
+  fields:
+
+    fondo:
+      type: input.colorpicker
+      label:
+      description:
+    fondo_paddig:
+      type: input.text
+      label:
+      description:
+      placeholder:
+    fondo_borde:
+      type: input.text
+      label:
+      description:
+      placeholder:
+    campos_color:
+      type: input.colorpicker
+      label:
+      description:
+    campos_borde:
+      type: input.text
+      label:
+      description:
+      placeholder:
+    campos_texto:
+      type: input.colorpicker
+      label:
+      description:
+    campos_placeholder:
+      type: input.colorpicker
+      label:
+      description:
+    campos_requeridos:
+      type: input.colorpicker
+      label:
+      description:
+    mapa_borde:
+      type: input.text
+      label:
+      description:
+      placeholder:
+    botones_fondo:
+      type: input.colorpicker
+      label:
+      description:
+    botones_texto:
+      type: input.colorpicker
+      label:
+      description:
+    datos_iconos:
+      type: input.colorpicker
+      label:
+      description:
+    datos_lineas:
+      type: input.colorpicker
+      label:
+      description:
+    datos_titulo_color:
+      type: input.colorpicker
+      label:
+      description:
+    datos_titulo_font:
+      type: input.fuente
+      label: datos_titulo font
+      description: 0 Base<br>1 Título<br>2 Texto<br>3 Extra
+      placeholder: 0
+    datos_titulo_size_l:
+      type: input.ress
+      description: Responsive large-desktop
+      placeholder: Large
+    datos_titulo_size_d:
+      type: input.ress
+      description: Responsive desktop
+      placeholder: Desktop
+    datos_titulo_size_t:
+      type: input.ress
+      description: Responsive Tablet
+      placeholder: Tablet
+    datos_titulo_size_m:
+      type: input.ress
+      description: Responsive Mobile
+      placeholder: Móvil
+    datos_texto_color:
+      type: input.colorpicker
+      label:
+      description:
+    datos_texto_font:
+      type: input.fuente
+      label: datos_texto font
+      description: 0 Base<br>1 Título<br>2 Texto<br>3 Extra
+      placeholder: 0
+    datos_texto_size_l:
+      type: input.ress
+      description: Responsive large-desktop
+      placeholder: Large
+    datos_texto_size_d:
+      type: input.ress
+      description: Responsive desktop
+      placeholder: Desktop
+    datos_texto_size_t:
+      type: input.ress
+      description: Responsive Tablet
+      placeholder: Tablet
+    datos_texto_size_m:
+      type: input.ress
+      description: Responsive Mobile
+      placeholder: Móvil
+    descripcion_titulo_color:
+      type: input.colorpicker
+      label:
+      description:
+    descripcion_titulo_font:
+      type: input.fuente
+      label: descripcion_titulo font
+      description: 0 Base<br>1 Título<br>2 Texto<br>3 Extra
+      placeholder: 0
+    descripcion_titulo_size_l:
+      type: input.ress
+      description: Responsive large-desktop
+      placeholder: Large
+    descripcion_titulo_size_d:
+      type: input.ress
+      description: Responsive desktop
+      placeholder: Desktop
+    descripcion_titulo_size_t:
+      type: input.ress
+      description: Responsive Tablet
+      placeholder: Tablet
+    descripcion_titulo_size_m:
+      type: input.ress
+      description: Responsive Mobile
+      placeholder: Móvil
+    descripcion_texto_color:
+      type: input.colorpicker
+      label:
+      description:
+    descripcion_texto_font:
+      type: input.fuente
+      label: descripcion_texto font
+      description: 0 Base<br>1 Título<br>2 Texto<br>3 Extra
+      placeholder: 0
+    descripcion_texto_size_l:
+      type: input.ress
+      description: Responsive large-desktop
+      placeholder: Large
+    descripcion_texto_size_d:
+      type: input.ress
+      description: Responsive desktop
+      placeholder: Desktop
+    descripcion_texto_size_t:
+      type: input.ress
+      description: Responsive Tablet
+      placeholder: Tablet
+    descripcion_texto_size_m:
+      type: input.ress
+      description: Responsive Mobile
+      placeholder: Móvil

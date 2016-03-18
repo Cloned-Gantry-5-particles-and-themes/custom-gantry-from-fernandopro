@@ -1,0 +1,199 @@
+////////////////////////////////////////////
+// SCHEME
+@import "../../assets/bower/color-schemer/stylesheets/color-schemer";
+$accent-rueda-cromatica: ryb !default; // rgb, ryb
+$accent-girar-rueda: 0 !default; // (0) 180  360
+$accent-saturar-global: 50% !default; //   0  (50)  100
+$accent-claridad-global: 50% !default; //   0  (50)  100
+$accent-color-base: #dddddd !default;
+
+
+@if $accent-rueda-cromatica == 'rgb' {
+  // rgb
+  @if $accent-activar-glob == '' {
+    $accent-bcolor_1: adjust-hue($accent-color-base,$accent-girar-rueda);
+  }
+  @else {
+    $pre-bcolor_1: adjust-hue($accent-color-base,$accent-girar-rueda);
+    $pre-bcolor_2: set-lightness($pre-bcolor_1,$accent-claridad-global);
+    $accent-bcolor_1: set-saturation($pre-bcolor_2,$accent-saturar-global);
+  }
+}
+@else {
+  // ryb
+  @if $accent-activar-glob == '' {
+    $accent-bcolor_1: $accent-color-base;
+  }
+  @else {
+    $pre-bcolor_1: ryb-adjust-hue($accent-color-base,$accent-girar-rueda);
+    $pre-bcolor_2: set-lightness($pre-bcolor_1,$accent-claridad-global);
+    $accent-bcolor_1: set-saturation($pre-bcolor_2,$accent-saturar-global);
+  }
+}
+//ARMONÍAS
+@if $accent-armonia == 1 {
+  // Monocromático
+  $accent-monocontraste: 15% !default;
+  @if (lightness($accent-bcolor_1) > 50) {
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: shade($accent-bcolor_1,1 * $accent-monocontraste);
+    $ac-c3: shade($accent-bcolor_1,2 * $accent-monocontraste);
+    @if $accent-mono-color2 == '' {
+      $ac-c4: shade($accent-bcolor_1,3 * $accent-monocontraste);
+    }
+    @else {
+      $ac-c4: $accent-mono-color2;
+    }
+  }
+  @else {
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: tint($accent-bcolor_1,1 * $accent-monocontraste);
+    $ac-c3: tint($accent-bcolor_1,2 * $accent-monocontraste);
+    @if $accent-mono-color2 == '' {
+      $ac-c4: tint($accent-bcolor_1,3 * $accent-monocontraste);
+    }
+    @else {
+      $ac-c4: $accent-mono-color2;
+    }
+  }
+}
+@else if $accent-armonia == 2 {
+  // análogo
+  @if $accent-rueda-cromatica == 'rgb' {
+    // rgb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: adjust-hue($accent-bcolor_1, -30);
+    $ac-c3: adjust-hue($accent-bcolor_1, 30);
+    $ac-c4: $accent-color-4 !default;
+  }
+  @else {
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: ryb-adjust-hue($accent-bcolor_1, -30);
+    $ac-c3: ryb-adjust-hue($accent-bcolor_1, 30);
+    $ac-c4: $accent-color-4 !default;
+  }
+}
+@else if $accent-armonia == 3 {
+  // Triada
+  @if $accent-rueda-cromatica == 'rgb' {
+    // rgb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: adjust-hue($accent-bcolor_1, 120);
+    $ac-c3: adjust-hue($accent-bcolor_1, 240);
+    $ac-c4: $accent-color-4 !default;
+  }
+  @else {
+    // ryb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: ryb-adjust-hue($accent-bcolor_1, 110);
+    $ac-c3: ryb-adjust-hue($accent-bcolor_1, 230);
+    $ac-c4: $accent-color-4 !default;
+  }
+}
+@else if $accent-armonia == 4 {
+  // Complementario
+  @if $accent-rueda-cromatica == 'rgb' {
+    // rgb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: complement($accent-bcolor_1);
+    $ac-c3: $accent-color-3 !default;
+    $ac-c4: $accent-color-4 !default;
+  }
+  @else {
+    // ryb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: ryb-complement($accent-bcolor_1);
+    $ac-c3: $accent-color-3 !default;
+    $ac-c4: $accent-color-4 !default;
+  }
+}
+@else if $accent-armonia == 5 {
+  // Complementario dividido
+  @if $accent-rueda-cromatica == 'rgb' {
+    // rgb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: adjust-hue($accent-bcolor_1, 180 + 30);
+    $ac-c3: adjust-hue($accent-bcolor_1, 180 - 30);
+    $ac-c4: $accent-color-4 !default;
+  }
+  @else {
+    // ryb
+    $ac-c1: $accent-bcolor_1;
+    $ac-c2: ryb-adjust-hue($accent-bcolor_1, 180 + 30);
+    $ac-c3: ryb-adjust-hue($accent-bcolor_1, 180 - 30);
+    $ac-c4: $accent-color-4 !default;
+  }
+}
+@else if $accent-armonia == 6 {
+  // Tetrádica
+  @if $accent-rueda-cromatica == 'rgb' {
+    // rgb
+    $ac-c1: adjust-hue($accent-bcolor_1, 0);
+    $ac-c2: adjust-hue($accent-bcolor_1, 80);
+    $ac-c3: adjust-hue($accent-bcolor_1, 180 - 0);
+    $ac-c4: adjust-hue($accent-bcolor_1, 180 + 80);
+  }
+  @else {
+    // ryb
+    $ac-c1: ryb-adjust-hue($accent-bcolor_1, 0)!default;
+    $ac-c2: ryb-adjust-hue($accent-bcolor_1, 80)!default;
+    $ac-c3: ryb-adjust-hue($accent-bcolor_1, 180 - 0)!default;
+    $ac-c4: ryb-adjust-hue($accent-bcolor_1, 180 + 80)!default;
+  }
+}
+@else  {
+  $ac-c1: $accent-color-1;
+  $ac-c2: $accent-color-2;
+  $ac-c3: $accent-color-3;
+  $ac-c4: $accent-color-4;
+}
+
+
+
+
+$accent-color-1: $ac-c1;
+
+
+@if $accent-color2-efect == '1' {
+  $accent-color-2-claridad: $accent-claridad-global !default;
+  $accent-color-2-saturar: $accent-saturar-global !default;
+  $preaccent-color-2: set-lightness($ac-c2,$accent-color-2-claridad);
+  $accent-color-2: set-saturation($preaccent-color-2,$accent-color-2-saturar);
+}
+@else {
+   $accent-color-2: $ac-c2;
+}
+
+@if $accent-color3-efect == '1' {
+  $accent-color-3-claridad: $accent-claridad-global !default;
+  $accent-color-3-saturar: $accent-saturar-global !default;
+  $preaccent-color-3: set-lightness($ac-c3,$accent-color-3-claridad);
+  $accent-color-3: set-saturation($preaccent-color-3,$accent-color-3-saturar);
+}
+@else {
+  $accent-color-3: $ac-c3;
+}
+
+@if $accent-color4-efect == '1' {
+  $accent-color-4-claridad: $accent-claridad-global !default;
+  $accent-color-4-saturar: $accent-saturar-global !default;
+  $preaccent-color-4: set-lightness($ac-c4,$accent-color-4-claridad);
+  $accent-color-4: set-saturation($preaccent-color-4,$accent-color-4-saturar);
+}
+@else {
+  $accent-color-4: $ac-c4
+}
+
+// Escala de grises
+$accent-contrastegris: 8% !default;
+$accent-color-5: #f6f6f6 !default;
+@if (lightness($accent-color-5) > 50) {
+  $accent-color-6: shade($accent-color-5,1 * $accent-contrastegris) !default;
+  $accent-color-7: shade($accent-color-5,2 * $accent-contrastegris) !default;
+  $accent-color-8: shade($accent-color-5,3 * $accent-contrastegris) !default;
+}
+@else {
+  $accent-color-6: tint($accent-color-5,1 * $accent-contrastegris) !default;
+  $accent-color-7: tint($accent-color-5,2 * $accent-contrastegris) !default;
+  $accent-color-8: tint($accent-color-5,3 * $accent-contrastegris) !default;
+}

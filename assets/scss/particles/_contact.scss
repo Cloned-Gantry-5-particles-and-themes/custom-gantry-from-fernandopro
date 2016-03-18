@@ -1,3 +1,23 @@
+/*  */
+$var40:          $contacto-datos_titulo_color;
+$var41:          $contacto-datos_texto_color;
+
+
+/* contato-datos_titulo | tipografía y tamaño */
+$var50:        $contacto-datos_titulo_font;
+$var51:        $contacto-datos_titulo_size_l;
+$var52:        $contacto-datos_titulo_size_d;
+$var53:        $contacto-datos_titulo_size_t;
+$var54:        $contacto-datos_titulo_size_m;
+
+/* contacto-datos_texto | tipografía y tamaño */
+$var60:        $contacto-datos_texto_font;
+$var61:        $contacto-datos_texto_size_l;
+$var62:        $contacto-datos_texto_size_d;
+$var63:        $contacto-datos_texto_size_t;
+$var64:       $contacto-datos_texto_size_m;
+
+
 $rule-color: $accent-color-1;
 .g-contact {
 	.g-contact-item {
@@ -36,15 +56,16 @@ $rule-color: $accent-color-1;
 	}
 	.g-contact-label {
 		text-transform: uppercase;
-		font-size: $core-font-size - 0.2;
+		@include color-tdweb ($var40,0,0);
+		@include font-family-tdweb($var50,$var51,$var52,$var53,$var54);
 		font-weight: bold;
-		opacity: 0.5;
 	}
 	.g-contact-text {
-		font-family: get-font-family($font-family-title);
-		font-weight: $font-weight-bold;
+		margin-top:5px;
+		@include color-tdweb ($var41,0,0);
+		@include font-family-tdweb($var60,$var61,$var62,$var63,$var64);
 		@include breakpoint(tablet-range) {
-			margin-top:25px;
+			margin-top:10px;
 		}
 	}
 	// Compact Mode
@@ -75,12 +96,12 @@ $rule-color: $accent-color-1;
 		    right: 0;
 		    top: 0;
 		    @include transition(background 0.2s);
-		}	
+		}
 		&:hover {
 			&:before {
 				background: fadeout($accent-color-1, 75%);
 			}
-		}	
+		}
 	}
 	.g-contact-map-marker {
 		color: $accent-color-1;

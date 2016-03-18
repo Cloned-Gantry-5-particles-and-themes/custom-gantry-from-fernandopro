@@ -1,0 +1,123 @@
+name: Paleta Colores
+description: Crear un Preset.
+type: particle
+icon: fa-picture-o
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable icon menu particles.
+      default: true
+
+    copiarde:
+      type: input.text
+      label: Copiar de
+      description:
+      placeholder: base
+
+    custom_presets:
+      type: collection.list
+      array: true
+      label: Mis Presets
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre del preset
+
+    monocromatico:
+      type: collection.list
+      array: true
+      label: Monocromático
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla
+
+    analogo:
+      type: collection.list
+      array: true
+      label: Análogo
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla
+
+    triada:
+      type: collection.list
+      array: true
+      label: Triada
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla
+
+    complementario:
+      type: collection.list
+      array: true
+      label: Complementario
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla
+
+    comple_dividido:
+      type: collection.list
+      array: true
+      label: Complement. dividido
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla
+
+    tetradica:
+      type: collection.list
+      array: true
+      label: Tetradica
+      description: Crear un nuevo preset.
+      value: title
+      ajax: true
+
+      fields:
+        .nombre:
+          type: input.text
+          label: Nombre
+          description:
+          placeholder: Nombre de la plantilla

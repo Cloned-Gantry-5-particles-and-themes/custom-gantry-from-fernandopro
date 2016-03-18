@@ -1,65 +1,66 @@
+//          ## MENU ARBOL | CONTACTO
+// ######################################################################
+
+//FONDO
+      $contacto-fondo:                                           '' !default;
+      $contacto-fondo_paddig:                                    '' !default;
+      $contacto-fondo_borde:                                     '' !default;
+
+//CAMPOS
+      $contacto-campos_color:                                    #fffff5 !default;
+      $contacto-campos_borde:                                    1px solid #eae9e9 !default;
+      $contacto-campos_placeholder:                              #fffff8 !default;
+      $contacto-campos_texto:                                    #fffff8 !default;
+
+//CAMPOS REQUERIDOS
+      $contacto-campos_requeridos:                               #b94a48 !default;
+
+//MAPA
+      $contacto-mapa_borde:                                      '0' !default;
+
+//BOTON
+      $contacto-botones_fondo:                                   #fffff5 !default;
+      $contacto-botones_texto:                                   #fffff8 !default;
 
 
-// base
+// DATOS LATERAL
+    // color
+      $contacto-datos_titulo_color:                               #fffff8 !default;
+      $contacto-datos_texto_color:                                #fffff8 !default;
+
+      $contacto-datos_iconos:                                    #fffff5 !default;
+      $contacto-datos_lineas:                                    #fffff5 !default;
+    // Texto
+      $contacto-datos_titulo_font:                                1 !default;
+      $contacto-datos_titulo_size_l:                              bold .8rem/1rem !default;
+      $contacto-datos_titulo_size_d:                              0 !default;
+      $contacto-datos_titulo_size_t:                              0 !default;
+      $contacto-datos_titulo_size_m:                              0 !default;
+
+      $contacto-datos_texto_font:                                2 !default;
+      $contacto-datos_texto_size_l:                              .8rem/1.2rem !default;
+      $contacto-datos_texto_size_d:                              0 !default;
+      $contacto-datos_texto_size_t:                              0 !default;
+      $contacto-datos_texto_size_m:                              0 !default;
+
+
+// DESCRIPCION
+    // color
+      $contacto-descripcion_titulo_color:                        #fffff8 !default;
+      $contacto-descripcion_texto_color:                         #fffff8 !default;
+
+
+    // Texto
+      $contacto-descripcion_titulo_font:                         1 !default;
+      $contacto-descripcion_titulo_size_l:                       1.4em/1em !default;
+      $contacto-descripcion_titulo_size_d:                       0 !default;
+      $contacto-descripcion_titulo_size_t:                       0 !default;
+      $contacto-descripcion_titulo_size_m:                       0 !default;
 
 
 
-// body
-    $body-background: '' !default;
-    $body-background-image: '' !default;
-    $body-background-repeat: '' !default;
-    $body-background-size: '' !default;
-    $body-image-mover: '' !default;
-
-
-// top
-    $top-background-color: '' !default;
-    $top-text_font: '2' !default;
-    $top-text_size_l: '1.4rem/1' !default;
-    $top-text_size_d: '' !default;
-    $top-text_size_t: '' !default;
-    $top-text_size_m: '' !default;
-    $top-text-color: '' !default;
-    $top-iconos: '' !default;
-    $top-social-icons: '' !default;
-    $top-f-social-icons: '' !default;
-    $top-social-border-color: '' !default;
-    $top-social-border-ancho: '' !default;
-    $top-background-image: '' !default;
-    $top-background-repeat: '' !default;
-    $top-background-size: '' !default;
-    $top-background-position: '' !default;
-
-
-// navigation
-    $navigation-background_color: '' !default;
-    $navigation-background_image: '' !default;
-    $navigation-background_repeat: '' !default;
-    $navigation-background_size: '' !default;
-    $navigation-background_position: '' !default;
-    $navigation-text-color: '' !default;
-    $navigation-color-active: '' !default;
-    $navigation-linea-inferior: '' !default;
-    $navigation-sub-menu-background: '' !default;
-    $navigation-sub-menu-texto: '' !default;
-    $navigation-sub-menu-texto-hover: '' !default;
-    $navigation-menu_font: '' !default;
-    $navigation-menu_size_l: '' !default;
-    $navigation-menu_size_d: '' !default;
-    $navigation-menu_size_t: '' !default;
-    $navigation-menu_size_m: '' !default;
-    $navigation-submenu_font: '' !default;
-    $navigation-submenu_size_l: '' !default;
-    $navigation-submenu_size_d: '' !default;
-    $navigation-submenu_size_t: '' !default;
-    $navigation-submenu_size_m: '' !default;
-    $navigation-background-buscar: '' !default;
-    $navigation-texto-buscar: '' !default;
-
-
-// p3 Showcase
-    $p3-background_color: '' !default;
-    $p3-background_image: '' !default;
-    $p3-background_repeat: '' !default;
-    $p3-background_size: '' !default;
-    $p3-background_position: '' !default;
+      $contacto-descripcion_texto_font:                          2 !default;
+      $contacto-descripcion_texto_size_l:                        1rem/1.3rem !default;
+      $contacto-descripcion_texto_size_d:                        0 !default;
+      $contacto-descripcion_texto_size_t:                        0 !default;
+      $contacto-descripcion_texto_size_m:                        0 !default;

@@ -38,9 +38,10 @@ var scripts = [
 	assetsDir + '/bower/wow/dist/wow.min.js',
 	jsDir + '/wowIni.js',
 	jsDir + '/picture_ini.js',
-    assetsDir + '/bower/picturefill/dist/picturefill.min.js',
+	jsDir + '/paletacolor.js',
+  assetsDir + '/bower/picturefill/dist/picturefill.min.js',
 	assetsDir + '/bower/rrssb/js/rrssb.min.js',
-    jsDir + '/simple.js'
+  jsDir + '/simple.js'
 ];
 
 
@@ -159,7 +160,7 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 // ////////////////////////////////////////////////
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"produccion:8887/dentist",
+        proxy:"http://vital:1000",
         port: 8000,
         open: false,
         notify: false,

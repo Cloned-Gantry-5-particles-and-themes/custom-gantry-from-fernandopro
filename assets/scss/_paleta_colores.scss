@@ -1,6 +1,103 @@
+#plantillas{
+	& .well{
+		border: none;
+		background-color: #212121;
+	}
+}
+
+
+.tituloColor {
+  .nn_tabs .nav-tabs,
+  .nn_tabs.outline_content>.tab-content,
+  .nn_tabs.outline_handles ul.nav-tabs>li a,
+   {
+        border: 1px solid #212121 !important;
+  }
+  .nn_tabs .nav-tabs>li.active>a,
+  .nn_tabs .nav-tabs>li.active>a:hover {
+    background-color: transparent !important;
+  }
+  .nn_tabs.top>ul.nav-tabs>li>a {
+        border: 1px solid #212121 !important;
+  }
+	.nn_tabs>.nav>li>a:hover{
+		background-color:transparent;
+	}
+}
+
+
+
+.button-paleta{
+	min-width: 300px;
+	display: inline-block;
+	margin-bottom: 20px;
+	background-color: #737373;
+	&:hover{
+		background-color: $accent-color-1;
+	}
+}
+
+.bloqArmonias select{
+	margin: 0;
+}
+
+
+.bloqArmonias{
+	margin: 40px 0;
+  & > span{
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 1px solid $accent-color-1;
+    letter-spacing: 1px;
+  }
+}
+
+.button-presets{
+	margin-top: 25px;
+	color: #ffffff;
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	line-height: 1.5;
+  font-size: 1rem;
+	vertical-align: middle;
+	text-shadow: none;
+	transition: background 0.1s;
+	&:hover{
+		background-color: $accent-color-2;
+	}
+}
+
+
+.mostrar_datos_js{
+	font-size: 1rem;
+}
+
+
+.tituloArmonias{
+	margin-bottom: 20px;
+	display: inline-block;
+	font-size: 1.3rem;
+}
+
+.cacheBorrar{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	&:hover{
+		color: #737373;
+	}
+}
+
+
+
 /*MODAL PALETA COLORES*/
 $colorLetra: lighten(#4d4d4d,15%);
+
 .colores {
+	max-width: 500px;
+	display: inline-block;
   cursor: pointer;
   position: absolute;
   top: 79px;
@@ -10,8 +107,9 @@ $colorLetra: lighten(#4d4d4d,15%);
   @include breakpoint(mobile-only) {
     display: none;
   }
-  & .dropdown-menu {
-    max-height: 350px;
+  & .dropdown-colores {
+		box-shadow: 10px 10px 44px -10px rgba(66,66,66,1);
+    max-height: 400px;
     overflow-y: scroll;
     background-color: #333;
     color: $colorLetra;
@@ -23,7 +121,7 @@ $colorLetra: lighten(#4d4d4d,15%);
         & a {
           color: $colorLetra;
           &:hover {
-            color: #DF5745;
+            color: #ffffff;
           }
         }
         & span {
@@ -40,10 +138,13 @@ $colorLetra: lighten(#4d4d4d,15%);
       margin: 0;
     }
     & .tituloColor {
-      margin-top: 10px;
+			text-align: center;
+      margin: 10px 15px;
       color: $colorLetra;
-      text-align: center;
-      font-size: 2rem;
+      & input[type="text"]{
+        position: relative;
+        top: 4px;
+      }
     }
     & .blqColoreWeb {
       padding: 0 50px;
@@ -78,3 +179,295 @@ $colorLetra: lighten(#4d4d4d,15%);
     }
   }
 }
+
+$c1:  lighten(#333333,8%);
+$c2:  lighten(#333333,8%);
+$c3:  lighten(#333333,8%);
+$c4:  lighten(#333333,8%);
+$c5:  lighten(#333333,8%);
+$c6:  lighten(#333333,8%);
+$c7:  lighten(#333333,8%);
+$c8:  lighten(#333333,8%);
+$c9:  lighten(#333333,8%);
+$c10: lighten(#333333,8%);
+$c11: lighten(#333333,8%);
+$c12: lighten(#333333,8%);
+
+
+@if $accent-armonia == 1 {
+  $c1:  $accent-color-1;
+  $c2:  $accent-color-2;
+  $c3:  $accent-color-3;
+  $c4:  $accent-color-4;
+	.cbColores .textMono {display: block;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: none;}
+
+}@else if $accent-armonia == 2 {
+  $c1:  $accent-color-1;
+  $c2:  $accent-color-2;
+  $c12:  $accent-color-3;
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: block;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: none;}
+
+}@else if $accent-armonia == 3 {
+  $c1:  $accent-color-1;
+  $c5:  $accent-color-2;
+  $c9:  $accent-color-3;
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: block;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: none;}
+
+}@else if $accent-armonia == 4 {
+  $c1:  $accent-color-1;
+  $c7:  $accent-color-2;
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: block;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: none;}
+
+}@else if $accent-armonia == 5 {
+  $c1:  $accent-color-1;
+  $c6:  $accent-color-2;
+  $c8:  $accent-color-3;
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {
+    display: block;
+  }
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: none;}
+}@else if $accent-armonia == 6 {
+  $c1: $accent-color-1;
+  $c3:  $accent-color-2;
+  $c7:  $accent-color-3;
+	$c9:  $accent-color-4;
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: block;}
+	.cbColores .textDesactivado {display: none;}
+}@else{
+	.cbColores .textMono {display: none;}
+	.cbColores .textAna {display: none;}
+	.cbColores .textTriada {display: none;}
+	.cbColores .textComp {display: none;}
+	.cbColores .textCompDivi {display: none;}
+	.cbColores .textTetra {display: none;}
+	.cbColores .textDesactivado {display: block;}
+}
+
+
+@if $accent-panel != '1' {
+  .coloresBase {
+    display: none;
+  }
+}
+@else {
+  .coloresBase {
+    padding: 15px;
+    display: block;
+		padding-bottom: 50px;
+		border-bottom: 1px solid #444;
+    #circulito {
+      border-radius: 50%;
+      box-shadow: 0 0 100px white, 1.95em -3.45em $c2, 3.45em -2em $c3, 4em 0 $c4, 3.4em 2em $c5, 1.95em 3.45em $c6, 0 4em $c7, -1.95em 3.45em $c8, -3.45em 2em $c9, -4em 0 $c10, -3.4em -2em $c11, -1.95em -3.45em $c12, 0 -4em $c1;
+      margin: 0 auto;
+      transition: transform 2s linear;
+      height: 30px;
+      width: 30px;
+			position: relative;
+			top: 70px;
+			right: 28px;
+			&::after{
+				display: inline-block;
+				position: relative;
+				left: 3px;
+				top: 1px;
+				font-size: .8rem;
+				@if $accent-rueda-cromatica =='ryb' {
+					content: "RYB";
+				}@else{
+					content: "RGB";
+				}
+			}
+    }
+    #circulito:hover {
+      transform: rotate(360deg);
+    }
+  }
+  .cabecera {
+    display: none !important;
+  }
+  .cbBloq {
+		display: flex;
+		align-items: flex-start;
+		align-content: flex-start;
+		& > div{
+			width: 50%;
+		}
+    & div.cbImage {
+			height: 200px;
+		}
+    & div.cbColores {
+			& .textCromatic{
+				margin-top: 5px;
+				font-size: .8em;
+				& div > strong:nth-child(1){
+					font-size: 1.1em;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+				}
+				& div strong{
+					font-size: 1em;
+					font-weight: bold;
+					color: lighten(#737373,15%);
+				}
+			}
+		}
+  }
+}
+
+
+.barraColores {
+  background-color: #ffffff;
+	padding: 25px 15px;
+  display: flex;
+  & > div {
+    height: 50px;
+		margin-right:1em;
+		width:calc(25% - 0.5em);
+		&::after{
+			color: #ccc;
+			position: relative;
+			top:50px;
+			left: 45px;
+		}
+  }
+  & > div:nth-child(1) {
+    background-color: $accent-color-1;
+		&::after{
+			content: "1";
+		}
+
+  }
+  & > div:nth-child(2) {
+    background-color: $accent-color-2;
+		&::after{
+			content: "2";
+		}
+  }
+  & > div:nth-child(3) {
+    background-color: $accent-color-3;
+		&::after{
+			content: "3";
+		}
+  }
+  & > div:nth-child(4) {
+    background-color: $accent-color-4;
+		margin-right:0;
+		&::after{
+			content: "4";
+		}
+  }
+}
+
+.barraGrises {
+  background-color: #ffffff;
+	padding: 12px 7px;
+  display: flex;
+  & > div {
+    height: 25px;
+		margin-right:1em;
+		width:calc(25% - 0.5em);
+		&::after{
+			color: #737373;
+			position: relative;
+			top:50px;
+			left: 45px;
+		}
+  }
+  & > div:nth-child(1) {
+    background-color: $accent-color-5;
+		&::after{
+			content: "5";
+		}
+
+  }
+  & > div:nth-child(2) {
+    background-color: $accent-color-6;
+		&::after{
+			content: "6";
+		}
+  }
+  & > div:nth-child(3) {
+    background-color: $accent-color-7;
+		&::after{
+			content: "7";
+		}
+  }
+  & > div:nth-child(4) {
+    background-color: $accent-color-8;
+		margin-right:0;
+		&::after{
+			content: "8";
+		}
+  }
+}
+
+.paletaFoter{
+  height: 50px;
+}
+
+/*@if $accent-armonia == 1 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/monocromatico.png");
+  }
+}
+@else if $accent-armonia == 2 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/analogo.png");
+  }
+}
+@else if $accent-armonia == 3 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/triada.png");
+  }
+}
+@else if $accent-armonia == 4 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/complementario.png");
+  }
+}
+@else if $accent-armonia == 5 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/comple_div.png");
+  }
+}
+@else if $accent-armonia == 6 {
+  #imgCustom::before {
+    content: url("templates/g5_hydrogen/custom/images/armonias/tetradica.png");
+  }
+}
+@else {}
+*/

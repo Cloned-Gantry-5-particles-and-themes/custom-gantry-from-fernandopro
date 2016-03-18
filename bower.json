@@ -19,6 +19,7 @@
     "wow": "WOW#~1.1.2",
     "animate.css": "~3.4.0",
     "picturefill": "~3.0.1",
-    "rrssb": "~1.9.1"
+    "rrssb": "~1.9.1",
+    "color-schemer": "^0.2.8"
   }
 }

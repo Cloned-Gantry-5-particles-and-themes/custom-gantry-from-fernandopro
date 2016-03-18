@@ -1,0 +1,289 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% block particle %}
+
+  <div class="colores">
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tdwebPaleta" aria-expanded="false" aria-controls="tdwebPaleta">
+      COLORES
+    </button>
+
+    <div class="collapse dropdown-colores" id="tdwebPaleta">
+      <div class="coloresBase">
+        <a class="cacheBorrar" href="/?cleancache=borrar">
+          <i class="fa fa-trash-o"></i>
+        </a>
+
+        <div class="cbBloq">
+          <div class="cbImage">
+            <div id="circulito"></div>
+          </div>
+          <div class="cbColores">
+            <div class="textCromatic">
+              <div class="textMono">
+                <strong id="ar_monocromatico" class="es_armonia">Monocromático<br></strong>
+                <span>
+                  La paleta de color monocromática consiste en un color y sus mezclas con blanco o negro. Es la más sencilla de crear. Es
+                  <strong>tranquila</strong>
+                  y
+                  <strong>elegante</strong>.
+                </span>
+              </div>
+              <div class="textAna">
+                <strong id="ar_analogo" class="es_armonia">Análogo<br></strong>
+                <span>
+                  Se usan colores que están uno al lado del otro. Por lo general se adaptan bien y crean diseños serenos y confortables. Esta combinación, a menudo se encuentra en la naturaleza y es
+                  <strong>armonioso y agradable a la vista</strong>. Hay que asegurarse de tener suficiente contraste al elegir un esquema de color análogo.
+                </span>
+              </div>
+              <div class="textTriada">
+                <strong id="ar_triada" class="es_armonia">Triada<br></strong>
+                <span>
+                  Utiliza colores equidistantes. La triada tiende a ser bastante vibrante, incluso si utilizas versiones pálidas. Para utilizar una armonía triádica con éxito, los colores deben ser cuidadosamente equilibrados -
+                  <strong>un color dominante y otros dos para el acento</strong>.
+                </span>
+              </div>
+              <div class="textComp">
+                <strong id="ar_complementario" class="es_armonia ">Complementario<br></strong>
+                <span>
+                  El alto contraste crea un aspecto vibrante especialmente cuando se utiliza en la saturación completa. Debe gestionarse bien por lo que no es discordante. Son difíciles de utilizar en grandes dosis, pero funcionan bien cuando se quiere destacar algo.
+                </span>
+              </div>
+              <div class="textCompDivi">
+                <strong id="ar_comple_dividido" class="es_armonia">Complementario dividido<br></strong>
+                <span>
+                  Es una variación del complementario. Además del color base, utiliza los 2 colores adyacentes a su complemento. Tiene el mismo fuerte contraste visual como la combinación de colores complementarios, pero tiene
+                  <strong>menos tensión</strong>
+                </span>
+              </div>
+              <div class="textTetra">
+                <strong id="ar_tetradica" class="es_armonia">Tetrádica<br></strong>
+                <span>
+                  Utiliza 4 colores dispuestos en 2 pares complementarios. Esta combinación ofrece un montón de posibilidades de variación. Funciona mejor si se deja
+                  <strong>un color dominante</strong>. También debe prestar atención al equilibrio entre los colores cálidos y fríos.
+                </span>
+              </div>
+              <div class="textDesactivado">
+                <strong>Rueda Cromática desactivada<br></strong>
+                <span>
+                  Leerá los colores individuales del template:
+                  <ul>
+                    <li>Accent-color-1</li>
+                    <li>Accent-color-2</li>
+                    <li>Accent-color-3</li>
+                    <li>Accent-color-4</li>
+                  </ul>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="barraColores">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <br>
+        <div class="barraGrises">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="g-grid cabecera">
+        <div class="g-block size-50">
+          <img src="images/tdweb_trans.png" alt="tdweb">
+        </div>
+        <div class="g-block size-50 video" style="text-align:center;">
+          <a data-rokbox href="https://www.youtube-nocookie.com/embed/UfexlI8oojQ?rel=0&amp;controls=0&amp;showinfo=0" data-rokbox-caption="PANEL DE CONTROL DE TDWEB">
+            <img src="images/video_paleta_colores.png" alt="video"/><br>
+            <span>
+              VER PANEL DE CONTROL</span>
+          </a>
+        </div>
+        <hr/>
+      </div>
+
+      <div class="tituloColor">
+        <div class="bloqArmonias">
+            <span>PRESETS</span>
+          <form method="post">
+            <select id="custom_presets">
+              {% for custompre in particle.custom_presets %}
+                <option>{{ custompre.nombre|e }}</option>
+              {% endfor %}
+            </select>
+            <a class="btn" onclick="custom_presets()" data-toggle="collapse" href="">
+              <i class="fa fa-refresh"></i>
+            </a>
+
+          <div>  <a id="cargacustom" href="">
+              <span id="mostrarcustom"></span>
+            </a></div>
+          </form>
+        </div>
+
+        <span style="display:none;" id="copiarde">{{ particle.copiarde|e }}</span>
+
+        <a class="button button-paleta" role="button" data-toggle="collapse" href="#plantillas" aria-expanded="false" aria-controls="collapseExample">
+          PLANTILLAS
+        </a>
+
+        <div class="collapse" id="plantillas">
+          <div class="well">
+
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/monocromatico.png">}
+            <div class="bloqArmonias">
+
+              <span>MONOCROMÁTICO</span>
+              <form method="post">
+                <select id="monocromatico">
+                  {% for mono in particle.monocromatico %}
+                    <option>{{ mono.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_monocromatico();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+                <div>
+                  <a id="cargaPreset_mono" href="">
+                    <span id="mostrarP_mono"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/analogo.png">}
+
+            <div class="bloqArmonias">
+              <span>ANÁLOGO</span>
+
+              <form method="post">
+                <select id="analogo">
+                  {% for analogos in particle.analogo %}
+                    <option>{{ analogos.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_analogo();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+
+                <div>
+                  <a id="cargaPreset_analogo" href="">
+                    <span id="mostrarP_analogo"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/triada.png">}
+
+            <div class="bloqArmonias">
+              <span>TRIADA</span>
+
+              <form method="post">
+                <select id="triada">
+                  {% for triadas in particle.triada %}
+                    <option>{{ triadas.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_triada();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+                <div>
+                  <a id="cargaPreset_triada" href="">
+                    <span id="mostrarP_triada"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/complementario.png">}
+
+            <div class="bloqArmonias">
+              <span>COMPLEMENTARIO</span>
+
+              <form method="post">
+                <select id="complementario">
+                  {% for complementarios in particle.complementario %}
+                    <option>{{ complementarios.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_complementario();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+                <div>
+                  <a id="cargaPreset_complementario" href="">
+                    <span id="mostrarP_complementario"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/comple_dividido.png">}
+
+            <div class="bloqArmonias">
+              <span>COMPLEMENTARIO DIVIDIDO</span>
+
+              <form method="post">
+                <select id="comple_dividido">
+                  {% for comple_div in particle.comple_dividido %}
+                    <option>{{ comple_div.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_comple_dividido();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+
+                <div>
+                  <a id="cargaPreset_comple_dividido" href="">
+                    <span id="mostrarP_comple_dividido"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            {tab
+            <img src="templates/g5_hydrogen/custom/images/armonias/tetradica.png">}
+
+            <div class="bloqArmonias">
+              <span>TETRÁDICA</span>
+
+              <form method="post">
+                <select id="tetradica">
+                  {% for tetradicas in particle.tetradica %}
+                    <option>{{ tetradicas.nombre|e }}</option>
+                  {% endfor %}
+                </select>
+                <a class="btn" onclick="cargar_tetradica();" data-toggle="collapse" href="">
+                  <i class="fa fa-refresh"></i>
+                </a>
+                <div>
+                  <a id="cargaPreset_tetradica" href="">
+                    <span id="mostrarP_tetradica"></span>
+                  </a>
+                </div>
+              </form>
+            </div>
+            {/tabs}
+
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="paletaFoter"></footer>
+    </div>
+
+  </div>
+
+  {% scripts in 'footer' with {priority: 10} %}
+  <script type="text/javascript" src="{{ url('gantry-theme://js/paletacolor.js') }}"></script>
+  {% endscripts -%}
+
+{% endblock %}

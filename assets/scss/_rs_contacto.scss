@@ -1,28 +1,60 @@
 /*FORMULARIO DE CONTACTO*/
 //FONDO
-$colorFondo             :   #F5F5F5;
-$paddingFondo           :   5px 10px;
-$bordeFondo             :   1px solid #eae9e9;
+$colorFondo:            $contacto-fondo;
+$paddingFondo:          $contacto-fondo_paddig;
+$bordeFondo:            $contacto-fondo_borde;
 
 //CAMPOS
-$colorFondoCampos       :   #FFF;
-$bordesCampos           :   none;
-$placeholderCampos      :   #333;
-$colorTextoCampos       :   $accent-color-1;
+$colorFondoCampos:      $contacto-campos_color;
+$bordesCampos:          $contacto-campos_borde;
+$placeholderCampos:     $contacto-campos_placeholder;
+$colorTextoCampos:      $contacto-campos_texto;
 
 //CAMPOS REQUERIDOS
-$colorAvisoReque        :   #b94a48;
-$colorAvisoIndividual   :   #b94a48;
+$colorAviso:            $contacto-campos_requeridos;
 
 //MAPA
-$bordeMapa              :   none;
+$bordeMapa:             $contacto-mapa_borde;
+
+//BOTONES
+$var1:                  $contacto-botones_fondo;
+$var2:                  $contacto-botones_texto;
+
+// DATOS
+$var3:                  $contacto-datos_iconos;
+$var4:                  $contacto-datos_lineas;
+
+
+
+
+// DESCRIPCION
+$var5:      $contacto-descripcion_titulo_color;
+$var6:      $contacto-descripcion_texto_color;
+
+
+/* descripcion titulo | tipografía y tamaño */
+$var20:     $contacto-descripcion_titulo_font;
+$var21:     $contacto-descripcion_titulo_size_l;
+$var22:     $contacto-descripcion_titulo_size_d;
+$var23:     $contacto-descripcion_titulo_size_t;
+$var24:     $contacto-descripcion_titulo_size_m;
+
+
+/* descripcion texto | tipografía y tamaño */
+$var30:     $contacto-descripcion_texto_font;
+$var31:     $contacto-descripcion_texto_size_l;
+$var32:     $contacto-descripcion_texto_size_d;
+$var33:     $contacto-descripcion_texto_size_t;
+$var34:     $contacto-descripcion_texto_size_m;
+
+
 
 
 
 .formContacto{
 	/**************************************************/
 	.soloForm{
-		background:$colorFondo;
+		@include background-color-tdweb ($colorFondo,0,0);
 		border: $bordeFondo;
 		padding:$paddingFondo;
 		border-radius:3px;
@@ -51,9 +83,9 @@ $bordeMapa              :   none;
 	input[type="text"]{
 	    /* display: block;*/
 		width: 100%;
-		background: $colorFondoCampos;
+		@include background-color-tdweb ($colorFondoCampos,0,0);
 		border: $bordesCampos;
-		color: $colorTextoCampos;
+		@include color-tdweb ($colorTextoCampos,0,0);
 		font-size: 16px;
 		height: 45px;
 		line-height: 24px;
@@ -78,8 +110,8 @@ $bordeMapa              :   none;
 	textarea{
 		width: 97%;
 		border: $bordesCampos;
-		background: $colorFondoCampos;
-		color: $colorTextoCampos;
+		@include background-color-tdweb ($colorFondoCampos,0,0);
+		@include color-tdweb ($colorTextoCampos,0,0);
 		box-shadow: none;
 		font-size: 16px;
 		height: 45px;
@@ -93,13 +125,13 @@ $bordeMapa              :   none;
 			border-color:$accent-color-1;
 		}
 	}
-	
-  
-  ::-webkit-input-placeholder {color:$placeholderCampos;}
-  ::-moz-placeholder          {color:$placeholderCampos;} /* Firefox 19+ */
-  :-moz-placeholder           {color:$placeholderCampos;}/* Firefox 18- */
-  :-ms-input-placeholder      {color:$placeholderCampos;}
-	
+
+
+  ::-webkit-input-placeholder {@include color-tdweb ($placeholderCampos,0,0);}
+  ::-moz-placeholder          {@include color-tdweb ($placeholderCampos,0,0);} /* Firefox 19+ */
+  :-moz-placeholder           {@include color-tdweb ($placeholderCampos,0,0);}/* Firefox 18- */
+  :-ms-input-placeholder      {@include color-tdweb ($placeholderCampos,0,0);}
+
 
 	.bloq2{
 		display:flex;
@@ -125,18 +157,18 @@ $bordeMapa              :   none;
 				width:100% !important;
 			}
 		}
-		
+
 		& .bloq2AvisoLegal{
 			@include breakpoint(mobile-only) {
 				margin-left:0;
 			}
 		}
-		
+
 		& .bloq2AvisoLegalFlex{
 			padding-left:10px;
 			display:flex;
-		    flex-wrap:wrap;
-		    justify-content:space-between;
+		  flex-wrap:wrap;
+		  justify-content:space-between;
 			align-items:center;
 			background: #f9f9f9;
 			border: 1px solid #d3d3d3;
@@ -152,7 +184,7 @@ $bordeMapa              :   none;
 				width:calc(33.3333% - 1em);
 			    margin:0.5em;
 			}
-			
+
 			& > div:nth-child(1){
 				display:flex;
 				align-items:center;
@@ -168,7 +200,7 @@ $bordeMapa              :   none;
 					}
 				}
 			}
-			
+
 			/*& > div:nth-child(2){
 				color:#ACACAC;
 				text-align:center;
@@ -187,7 +219,7 @@ $bordeMapa              :   none;
 					}
 				}
 			}*/
-		
+
 			& > div:nth-child(2){
 				text-align:right;
 				& .avisoImg{
@@ -200,18 +232,18 @@ $bordeMapa              :   none;
 				}
 				& .avisoIcon{
 					text-align:center;
-				}	
-			}	
+				}
+			}
 		}
-		
+
 		& .blog2Enviar{
 			& .rsform-submit-button, & .rsform-reset-button{
 				display: inline-block;
 				padding: 0.5rem 1rem;
                 border-radius: 0.1875rem;
                 box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-                background: $accent-color-1;
-                color: #fff;
+								@include background-color-tdweb ($var1,0,0);
+                @include color-tdweb ($var2,0,0);
                 border: 0;
                 line-height: 1.5;
                 font-size: 1rem;
@@ -220,9 +252,9 @@ $bordeMapa              :   none;
                 text-shadow: none;
                 transition: background 0.1s;
 				&:hover{
-					background:lighten($accent-color-1,5%);
+	        @include background-color-tdweb ($var1,1,6%);
 				}
-			
+
 			}
 			@include breakpoint(mobile-only) {
 				width:100% !important;
@@ -238,33 +270,52 @@ $bordeMapa              :   none;
 			}
 		}
 	}
-	
+
 	& .mapa{
 		margin-top:20px;
 		border-radius:3px;
 		border: $bordeMapa;
 	}
-	
-	
-	
-	
+
+
+
 	/***********************************************/
 }
 
-.avisoReque{color:$colorAvisoReque !important;}
+.avisoReque{
+	@include color-tdweb ($colorAviso,0,0,!important);
+}
 .formContacto .formError{
-	color: $colorAvisoIndividual !important;
+	@include color-tdweb ($colorAviso,0,0,!important);
 	@include breakpoint(mobile-only) {
 		width:200px;
 	}
 }
 
-.contactoFoto{
-	text-align:center;
-	& .g-content{
-		margin:0;
-	    padding:0;
+.contactoDescripcion{
+	& h3{
+		@include color-tdweb ($var5,0,0);
+		@include font-family-tdweb($var20,$var21,$var22,$var23,$var24);
+	}
+	& > p{
+		@include color-tdweb ($var6,0,0);
+		@include font-family-tdweb($var30,$var31,$var32,$var33,$var34);
 	}
 }
 
+	/********************** MODULO LATERAL CONTACTO DATOS *************************/
 
+	.contactoDatos{
+		& .g-contact-item{
+			& .g-contact-icon {
+         border-right: 1px solid colorComodin($var4);
+				@include breakpoint(tablet-range) {
+					 position: relative;
+				}
+				 & .fa {
+					 @include color-tdweb ($var3,0,0);
+
+				 }
+			 }
+		}
+	}

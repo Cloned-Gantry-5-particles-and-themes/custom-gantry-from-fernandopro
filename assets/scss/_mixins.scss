@@ -20,268 +20,367 @@
 }
 
 
-@mixin background-color-tdweb($bg-color: $bg-color2, $hsl:'0', $porcent: $porcent2) {
-  @if $hsl == '0' {
+
+@mixin background-color-tdweb($bg-color: $bg-color2, $efecto: $efecto2, $porcent: $porcent2,$importante: $importante) {
+  @if $importante == '' {
+  }@else{
+    $important: !important;
+  }
+  @if $efecto == 0 {
     @if $bg-color == #fffff1 {
-      background-color: $accent-color-1;
+      background-color: $accent-color-1 $important;
     }
     @else if $bg-color == #fffff2 {
-      background-color: $accent-color-2;
+      background-color: $accent-color-2 $important;
     }
     @else if $bg-color == #fffff3 {
-      background-color: $accent-color-3;
+      background-color: $accent-color-3 $important;
     }
     @else if $bg-color == #fffff4 {
-      background-color: $accent-color-4;
+      background-color: $accent-color-4 $important;
     }
     @else {
-      background-color: $bg-color;
+      background-color: $bg-color $important;
     }
   }
-  @if $hsl == '1' {
+  @if $efecto == 1 {
     @if $bg-color == #fffff1 {
-      background-color: darken($accent-color-1, $porcent);
+      background-color: shade($accent-color-1, $porcent) $important;
     }
     @else if $bg-color == #fffff2 {
-      background-color: darken($accent-color-2, $porcent);
+      background-color: shade($accent-color-2, $porcent) $important;
     }
     @else if $bg-color == #fffff3 {
-      background-color: darken($accent-color-3, $porcent);
+      background-color: shade($accent-color-3, $porcent) $important;
     }
     @else if $bg-color == #fffff4 {
-      background-color: darken($accent-color-4, $porcent);
+      background-color: shade($accent-color-4, $porcent) $important;
     }
     @else {
-      background-color: darken($bg-color, $porcent);
+      background-color: shade($bg-color, $porcent) $important;
     }
   }
-  @if $hsl == '2' {
+  @if $efecto == 2 {
     @if $bg-color == #fffff1 {
-      background-color: lighten($accent-color-1, $porcent);
+      background-color: tint($accent-color-1, $porcent) $important;
     }
     @else if $bg-color == #fffff2 {
-      background-color: lighten($accent-color-2, $porcent);
+      background-color: tint($accent-color-2, $porcent) $important;
     }
     @else if $bg-color == #fffff3 {
-      background-color: lighten($accent-color-3, $porcent);
+      background-color: tint($accent-color-3, $porcent) $important;
     }
     @else if $bg-color == #fffff4 {
-      background-color: lighten($accent-color-4, $porcent);
+      background-color: tint($accent-color-4, $porcent) $important;
     }
     @else {
-      background-color: lighten($bg-color, $porcent);
+      background-color: tint($bg-color, $porcent) $important;
+    }
+  }
+  @if $efecto == 3 {
+    @if $bg-color == #fffff1 {
+      background-color: transparentize($accent-color-1, $porcent) $important;
+    }
+    @else if $bg-color == #fffff2 {
+      background-color: transparentize($accent-color-2, $porcent) $important;
+    }
+    @else if $bg-color == #fffff3 {
+      background-color: transparentize($accent-color-3, $porcent) $important;
+    }
+    @else if $bg-color == #fffff4 {
+      background-color: transparentize($accent-color-4, $porcent) $important;
+    }
+    @else {
+      background-color: transparentize($bg-color, $porcent) $important;
     }
   }
 
-  @if $hsl == '3' {
+  @if $efecto == 4 {
     @if $bg-color == #fffff1 {
-      background-color: invert($accent-color-1);
+      background-color: adjust-hue($accent-color-1, $porcent) $important;
     }
     @else if $bg-color == #fffff2 {
-      background-color: invert($accent-color-2);
+      background-color: adjust-hue($accent-color-2, $porcent) $important;
     }
     @else if $bg-color == #fffff3 {
-      background-color: invert($accent-color-3);
+      background-color: adjust-hue($accent-color-3, $porcent) $important;
     }
     @else if $bg-color == #fffff4 {
-      background-color: invert($accent-color-4);
+      background-color: adjust-hue($accent-color-4, $porcent) $important;
     }
     @else {
-      background-color: invert($bg-color);
+      background-color: adjust-hue($bg-color, $porcent) $important;
     }
+  }
+  @if $bg-color == #fffff5 {
+    background-color: $accent-color-5 $important;
+  }
+  @else if $bg-color == #fffff6 {
+    background-color: $accent-color-6 $important;
+  }
+  @else if $bg-color == #fffff7 {
+    background-color: $accent-color-7 $important;
+  }
+  @else if $bg-color == #fffff8 {
+    background-color: $accent-color-8 $important;
+  }
+
+}
+
+
+@function colorComodin($color) {
+  @if $color == #fffff1 {
+    $colorN: $accent-color-1;
+  }
+  @else if $color == #fffff2 {
+    $colorN: $accent-color-2;
+  }
+  @else if $color == #fffff3 {
+    $colorN: $accent-color-3;
+  }
+  @else if $color == #fffff4 {
+    $colorN: $accent-color-4;
+  }
+  @else if $color == #fffff5 {
+    $colorN: $accent-color-5;
+  }
+  @else if $color == #fffff6 {
+    $colorN: $accent-color-6;
+  }
+  @else if $color == #fffff7 {
+    $colorN: $accent-color-7;
+  }
+  @else if $color == #fffff8 {
+    $colorN: $accent-color-8;
+  }
+  @else {
+    $colorN: $color;
+  }
+  @return $colorN;
+}
+
+@mixin color-tdweb($color:$color2, $efecto:$efecto2, $porcent:$porcent2,$importante:$importante) {
+  @if $importante == ''  {
+  }@else{
+    $important: !important;
+  }
+  @if $efecto == 0 {
+    @if $color == #fffff1 {
+      color: $accent-color-1 $important;
+    }
+    @else if $color == #fffff2 {
+      color: $accent-color-2 $important;
+    }
+    @else if $color == #fffff3 {
+      color: $accent-color-3 $important;
+    }
+    @else if $color == #fffff4 {
+      color: $accent-color-4 $important;
+    }
+    @else {
+      color: $color $important;
+    }
+  }
+  @if $efecto == 1 {
+    @if $color == #fffff1 {
+      color: shade($accent-color-1, $porcent) $important;
+    }
+    @else if $color == #fffff2 {
+      color: shade($accent-color-2, $porcent) $important;
+    }
+    @else if $color == #fffff3 {
+      color: shade($accent-color-3, $porcent) $important;
+    }
+    @else if $color == #fffff4 {
+      color: shade($accent-color-4, $porcent) $important;
+    }
+    @else {
+      color: shade($color,$porcent) $important;
+    }
+  }
+  @if $efecto == 2 {
+    @if $color == #fffff1 {
+      color: tint($accent-color-1,$porcent) $important;
+    }
+    @else if $color == #fffff2 {
+      color: tint($accent-color-2,$porcent) $important;
+    }
+    @else if $color == #fffff3 {
+      color: tint($accent-color-3,$porcent) $important;
+    }
+    @else if $color == #fffff4 {
+      color: tint($accent-color-4,$porcent) $important;
+    }
+    @else {
+      color: tint($color,$porcent) $important;
+    }
+  }
+
+  @if $efecto == 3 {
+    @if $color == #fffff1 {
+      color: transparentize($accent-color-1, $porcent) $important;
+    }
+    @else if $color == #fffff2 {
+      color: transparentize($accent-color-2, $porcent) $important;
+    }
+    @else if $color == #fffff3 {
+      color: transparentize($accent-color-3, $porcent) $important;
+    }
+    @else if $color == #fffff4 {
+      color: transparentize($accent-color-4, $porcent) $important;
+    }
+    @else {
+      color: transparentize($color, $porcent) $important;
+    }
+  }
+  @if $efecto == 4 {
+    @if $color == #fffff1 {
+      color: adjust-hue($accent-color-1, $porcent) $important;
+    }
+    @else if $color == #fffff2 {
+      color: adjust-hue($accent-color-2, $porcent) $important;
+    }
+    @else if $color == #fffff3 {
+      color: adjust-hue($accent-color-3, $porcent) $important;
+    }
+    @else if $color == #fffff4 {
+      color: adjust-hue($accent-color-4, $porcent) $important;
+    }
+    @else {
+      color: adjust-hue($color, $porcent) $important;
+    }
+  }
+  @if $color == #fffff5 {
+    color: $accent-color-5 $important;
+  }
+  @else if $color == #fffff6 {
+    color: $accent-color-6 $important;
+  }
+  @else if $color == #fffff7 {
+    color: $accent-color-7 $important;
+  }
+  @else if $color == #fffff8 {
+    color: $accent-color-8 $important;
   }
 }
 
 
-@mixin color-tdweb($color: $color2, $hsl:'0', $porcent: $porcent2) {
-  @if $hsl == '0' {
-    @if $color == #fffff1 {
-      color: $accent-color-1;
-    }
-    @else if $color == #fffff2 {
-      color: $accent-color-2;
-    }
-    @else if $color == #fffff3 {
-      color: $accent-color-3;
-    }
-    @else if $color == #fffff4 {
-      color: $accent-color-4;
-    }
+
+@mixin font-family-tdweb ($font:$font2, $size-l:$size-l2, $size-d:$size-d2, $size-t:$size-t2, $size-m:$size-m2) {
+  @if $font == 'icon' {
+    @if $size-l == 0 {}
     @else {
-      color: $color;
+      font: normal normal normal $size-l FontAwesome;
+    }
+    @if $size-d == 0 {}
+    @else {
+      @include breakpoint(desktop-range) {
+        font: normal normal normal $size-d FontAwesome;
+      }
+    }
+    @if $size-t == 0 {}
+    @else {
+      @include breakpoint(tablet-range) {
+        font: normal normal normal $size-t FontAwesome;
+      }
+    }
+    @if $size-m == 0 {}
+    @else {
+      @include breakpoint(mobile-only) {
+        font: normal normal normal $size-m FontAwesome;
+      }
     }
   }
-  @if $hsl == '1' {
-    @if $color == #fffff1 {
-      color: darken($accent-color-1, $porcent);
-    }
-    @else if $color == #fffff2 {
-      color: darken($accent-color-2, $porcent);
-    }
-    @else if $color == #fffff3 {
-      color: darken($accent-color-3, $porcent);
-    }
-    @else if $color == #fffff4 {
-      color: darken($accent-color-4, $porcent);
-    }
-    @else {
-      color: darken($color, $porcent);
-    }
-  }
-  @if $hsl == '2' {
-    @if $color == #fffff1 {
-      color: lighten($accent-color-1, $porcent);
-    }
-    @else if $color == #fffff2 {
-      color: lighten($accent-color-2, $porcent);
-    }
-    @else if $color == #fffff3 {
-      color: lighten($accent-color-3, $porcent);
-    }
-    @else if $color == #fffff4 {
-      color: lighten($accent-color-4, $porcent);
-    }
-    @else {
-      color: lighten($color, $porcent);
-    }
-  }
-
-  @if $hsl == '3' {
-    @if $color == #fffff1 {
-      background-color: invert($accent-color-1);
-    }
-    @else if $color == #fffff2 {
-      background-color: invert($accent-color-2);
-    }
-    @else if $color == #fffff3 {
-      background-color: invert($accent-color-3);
-    }
-    @else if $color == #fffff4 {
-      color: invert($accent-color-4);
-    }
-    @else {
-      color: invert($color);
-    }
-  }
-}
-
-
-
-@mixin font-family-tdweb ($font, $size-l, $size-d, $size-t, $size-m) {
-  @if $font == '' {
-    @if $size-l == '' {}
+  @if $font == 0 {
+    @if $size-l == 0 {}
     @else {
       font: $size-l get-font-family($font2);
     }
-    @if $size-d == '' {}
+    @if $size-d == 0 {}
     @else {
       @include breakpoint(desktop-range) {
         font: $size-d get-font-family($font2);
       }
     }
-    @if $size-t == '' {}
+    @if $size-t == 0 {}
     @else {
       @include breakpoint(tablet-range) {
         font: $size-t get-font-family($font2);
       }
     }
-    @if $size-t == '' {}
+    @if $size-m == 0 {}
     @else {
       @include breakpoint(mobile-only) {
         font: $size-m get-font-family($font2);
       }
     }
   }
-  @if $font == '0' {
-    @if $size-l == '' {}
-    @else {
-      font: $size-l get-font-family($font2);
-    }
-    @if $size-d == '' {}
-    @else {
-      @include breakpoint(desktop-range) {
-        font: $size-d get-font-family($font2);
-      }
-    }
-    @if $size-t == '' {}
-    @else {
-      @include breakpoint(tablet-range) {
-        font: $size-t get-font-family($font2);
-      }
-    }
-    @if $size-t == '' {}
-    @else {
-      @include breakpoint(mobile-only) {
-        font: $size-m get-font-family($font2);
-      }
-    }
-  }
-  @if $font == '1' {
-    @if $size-l == '' {}
+  @if $font == 1 {
+    @if $size-l == 0 {}
     @else {
       font: $size-l get-font-family($font1);
     }
-    @if $size-d == '' {}
+    @if $size-d == 0 {}
     @else {
       @include breakpoint(desktop-range) {
         font: $size-d get-font-family($font1);
       }
     }
-    @if $size-t == '' {}
+    @if $size-t == 0 {}
     @else {
       @include breakpoint(tablet-range) {
         font: $size-t get-font-family($font1);
       }
     }
-    @if $size-t == '' {}
+    @if $size-m == 0 {}
     @else {
       @include breakpoint(mobile-only) {
         font: $size-m get-font-family($font1);
       }
     }
   }
-  @if $font == '2' {
-    @if $size-l == '' {}
+  @if $font == 2 {
+    @if $size-l == 0 {}
     @else {
       font: $size-l get-font-family($font2);
     }
-    @if $size-d == '' {}
+    @if $size-d == 0 {}
     @else {
       @include breakpoint(desktop-range) {
         font: $size-d get-font-family($font2);
       }
     }
-    @if $size-t == '' {}
+    @if $size-t == 0 {}
     @else {
       @include breakpoint(tablet-range) {
         font: $size-t get-font-family($font2);
       }
     }
-    @if $size-t == '' {}
+    @if $size-m == 0 {}
     @else {
       @include breakpoint(mobile-only) {
         font: $size-m get-font-family($font2);
       }
     }
   }
-  @if $font == '3' {
-    @if $size-l == '' {}
+  @if $font == 3 {
+    @if $size-l == 0 {}
     @else {
       font: $size-l get-font-family($font3);
     }
-    @if $size-d == '' {}
+    @if $size-d == 0 {}
     @else {
       @include breakpoint(desktop-range) {
         font: $size-d get-font-family($font3);
       }
     }
-    @if $size-t == '' {}
+    @if $size-t == 0 {}
     @else {
       @include breakpoint(tablet-range) {
         font: $size-t get-font-family($font3);
       }
     }
-    @if $size-t == '' {}
+    @if $size-m == 0 {}
     @else {
       @include breakpoint(mobile-only) {
         font: $size-m get-font-family($font3);

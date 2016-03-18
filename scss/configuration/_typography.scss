@@ -1,0 +1,27 @@
+/********************************************************
+  TIPOGRAFÍAS
+********************************************************/
+@include font-face('Bloody', 'gantry-theme://fonts/bloody/BLOODY-webfont');
+.font__bloody {
+  font-family: 'Bloody',"Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+.font__titulo {
+  font-family: 'Shadows Into Light',"Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+// Font Family
+$base-extra-font:      	  "Bloody", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif !default;
+
+
+// // Mis 3 tipografías
+$font1: $base-heading-font;
+$font2: $base-body-font;
+$font3: $base-extra-font;

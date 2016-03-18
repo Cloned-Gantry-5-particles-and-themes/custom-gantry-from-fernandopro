@@ -1,0 +1,699 @@
+#########################################################################
+                              # default
+#########################################################################
+#########################################################################
+default:
+  image: 'gantry-admin://images/default.jpg'
+  description: 'default'
+  colors:
+    - '#4BAE4F'
+    - '#7ACB5A'
+    - '#AEED9B'
+    - '#F6F6F6'
+
+  styles:
+                                                    ## CORE ##
+## ############################ CORE ####################################
+
+#########################################################################
+    accent:
+    ## Activar panel
+      panel:                                             '1' # 1 activar
+
+## ####################  Rueda Cromática color
+      rueda-cromatica:                                   '0' # ryb rgb
+      color-base:                                        ''
+      girar-rueda:                                       '' #   (0%)  180%  360%
+
+      armonia:                                           '0' #
+    # 0 Gantry, 1 Monocromático, 2 Análogo, 3 Triada, 4 Complementario,
+    # 5 Complementario-div, 6 Tetra
+
+      monocontraste:                                     '' # OBLIGATORIO PORCENTAJE %
+      mono-color2:                                       '' # accento color en Monocromático
+
+    ## Colores
+      color-1:                                           '#4BAE4F'
+      color-2:                                           '#7ACB5A'
+      color-3:                                           '#AEED9B'
+      color-4:                                           '#f6f6f6'
+
+    ## Grises
+      contrastegris:                                     '' # OBLIGATORIO PORCENTAJE %
+      color-5:                                           ''
+
+      color-6:                                           ''
+      color-7:                                           ''
+      color-8:                                           ''
+
+
+## ####################   Parámetros globales
+      activar-glob:                                      '' # 1 activar
+
+      saturar-global:                                    '' # %  0%  (50%)  100% pastel
+      claridad-global:                                   '' # %  0%  (50%)  100%
+
+
+  ## #################### Parámetros individuales
+
+
+      color2-efect:                                      '' # 1 activar
+      color-2-saturar:                                   ''  #  0  25  (50) 75  100
+      color-2-claridad:                                  ''  #  0  25  (50) 75  100
+
+      color3-efect:                                      '' # 1 activar
+      color-3-saturar:                                   ''
+      color-3-claridad:                                  ''
+
+      color4-efect:                                      '' # 1 activar
+      color-4-saturar:                                   ''
+      color-4-claridad:                                  ''
+
+    base:
+## #################### Tipografía
+      heading-font:                                      '' # 1 Fuente para títulos
+      body-font:                                         '' # 2 Fuente para textos
+      extra-font:                                        '' # 3 Fuente  extra tdweb
+
+## Botón Slider
+      slider_btn:                                        '#fffff1' # color fondo botón
+      slider_btn__hover:                                 '#fffff2'
+      slider_btn_texto:                                  '#ffffff' # color texto botón
+      slider_btn_texto_hover:                            '#ffffff'
+
+
+
+
+
+                                                               ## BODY ##
+## ############################ BODY ####################################
+
+#########################################################################
+    body:
+## imagen
+      background_image:                                  '#fffff4' # gantry-media:##presets/default/image.jpg
+      background_repeat:                                 '' # repeat, no-repeat, repeat-x, repeat-y
+      background_size:                                   '' # auto, contain, cover
+      background_position:                               '' # 100px 20px
+## color
+      background:                                        '' #
+      background_efecto:                                 '' # 1
+      background_efectovalor:                            ''
+
+
+
+
+
+                                                               ## TOP ##
+## ############################# TOP ####################################
+
+#########################################################################
+    top:
+## imagen
+      background_image:                                  '' ## # Fondo SECCIÓN imagen
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+## colores
+      background_color:                                  '#fffff1' ## # Fondo SECCIÓN color
+      background_colorefecto:                            '' ## # 1 oscurecer, 2 aclarar, 3 invertir
+      background_colorvalor:                             ''
+
+      text-color:                                        '#ffffff'   ## # Color números Teléfonos
+      text-colorefecto:                                  ''
+      text-colorefectovalor:                             ''
+
+      iconos:                                            '#ffffff' ## # Color Iconos Teléfonos
+      iconos_efecto:                                     ''
+      iconos_efectovalor:                                ''
+
+      social_iconscolor:                                 '#fffff1' ## # Iconos sociales
+      social_iconsefecto:                                ''
+      social_iconsefectovalor:                           ''
+
+      social_fondo:                                      '#fffff4' ## # Fondo Iconos sociales
+      social_fondoefecto:                                ''
+      social_fondoefectovalor:                           ''
+
+      social-border-ancho:                               '' ## # Borde y color Iconos sociales
+      social-border-color:                               '#fffff4'
+##textos
+      text_font:                                         '1' # Números de teléfono
+      text_size_l:                                       '400 1.4em/1em'
+      text_size_d:                                       ''
+      text_size_t:                                       ''
+      text_size_m:                                       ''
+
+
+
+
+
+                                                         ## NAVIGATION ##
+## ############################ NAVIGATION ##############################
+
+#########################################################################
+
+    navigation:
+## imagen
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+## colores
+      background_color:                                  '#fffff2'
+      background_efecto:                                 ''
+      background_efectovalor:                            ''
+
+## otros
+      menu:                                              '1' ## # Elige que menú cargar
+
+
+##                        ## MENÚ 1 ###
+## ######################################################################
+
+## colores
+    ## Top level
+      textcolor:                                         '#fffff3'
+      coloractive:                                       '#ffffff'
+      linea-inferior:                                    '#ffffff'
+      background-buscar:                                 '#fffff1' ## Buscador
+      texto-buscar:                                      '#fffff3' ## Buscador
+    ## Sub level
+      sub-menu-background:                               '#ffffff'
+      sub-menu-texto:                                    '#333333'
+      submenutextohover:                                 '#fffff1'
+
+## textos
+    ## Top level
+      menu_font:                                         1 ## # Elige tipografía, 1, 2, 3
+      menu_size_l:                                      'bold 1.4rem/1rem'
+      menu_size_d:                                      '0'
+      menu_size_t:                                      '0'
+      menu_size_m:                                      '0'
+    ## Sub level
+      submenu_font:                                     '0'
+      submenu_size_l:                                   '1em'
+      submenu_size_d:                                   '0'
+      submenu_size_t:                                   '0'
+      submenu_size_m:                                   '0'
+
+
+##                        ## MENÚ 2 ###
+## ######################################################################
+
+                  ## EN OBRAS!! Perdona las molestias.
+
+
+
+
+
+
+
+
+                                                           ## SHOWCASE ##
+## ############################ SHOWCASE ################################
+
+#########################################################################
+
+    p3:
+## imagen
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+## color
+      background_color:                                  '#ffffff'
+      background_efecto:                                 '3'
+      background_efectovalor:                            '100%'
+
+
+##                  ## SHOWCASE A ###  El equipo roksprocket inicio
+## ######################################################################
+    p3a:
+## imagen
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+## color
+      background_color:                                  '#fffff2'
+      background_efecto:                                 ''
+      background_efectovalor:                            ''
+
+      titulo:                                            '#ffffff'
+      titulo_efecto:                                     ''
+      titulo_efectovalor:                                ''
+
+      titulo-hover:                                      '#363F45'
+      titulo-hover_efecto:                               ''
+      titulo-hover_efectovalor:                          ''
+
+      sub-titulo:                                        '#fffff3'
+      sub-titulo_efecto:                                 ''
+      sub-titulo_efectovalor:                            ''
+## textos
+      titulo_font:                                       '1'
+      titulo_size_l:                                     '1.6rem/1rem'
+      titulo_size_d:                                     '1.5rem/1rem'
+      titulo_size_t:                                     ''
+      titulo_size_m:                                     ''
+
+      subtitulo_font:                                    '2'
+      subtitulo_size_l:                                  '1rem'
+      subtitulo_size_d:                                  ''
+      subtitulo_size_t:                                  ''
+      subtitulo_size_m:                                  ''
+## otros
+      somb-caja:                                         ''
+                                                         ## www.cssmatic.com/es/box-shadow
+
+
+##                  ## SHOWCASE B ###  Horarios
+## ######################################################################
+    p3b:
+## imagen
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+## color
+      background_color:                                  '#fffff1'
+      background_efecto:                                 '' # 1 oscurecer, 2 aclarar, 3 transparencia, 4 tono
+      background_efectovalor:                            ''
+
+      titulo:                                            '#ffffff' # Color título
+      titulo_efecto:                                     ''
+      titulo_efectovalor:                                ''
+
+      subtitulo:                                         '#fffff3'
+      subtitulo_efecto:                                  ''
+      subtitulo_efectovalor:                             ''
+
+## textos
+      titulo_font:                                       '1'
+      titulo_size_l:                                     '700 2em'
+      titulo_size_d:                                     ''
+      titulo_size_t:                                     ''
+      titulo_size_m:                                     ''
+
+      subtitulo_font:                                    '2'
+      subtitulo_size_l:                                  '1em'
+      subtitulo_size_d:                                  ''
+      subtitulo_size_t:                                  ''
+      subtitulo_size_m:                                  ''
+
+## otros, Icono en formato Unicode, f24e
+      icon:                                              'f017' #  www.fontawesome.io/icons/   ejemplo: f24e
+
+      icon_size_l:                                       '3em'
+      icon_size_d:                                       ''
+      icon_size_t:                                       ''
+      icon_size_m:                                       ''
+
+
+
+
+
+
+
+                                                         ## UTILITY ##
+## ####################### UTILITY FONDO ################################
+
+#########################################################################
+
+    utility:
+
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+
+      background_color:                                  ''
+      background_color_ef:                               ''
+      background_color_va:                               ''
+
+
+
+##            ## UTILITY A ###  Quienes somos
+## ######################################################################
+    utility-a:
+
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+
+      background_color:                                  '#ffffff'
+      background_color_ef:                               ''
+      background_color_va:                               ''
+
+      titulo_color:                                      '#333333'
+      titulo_color_ef:                                   ''
+      titulo_color_va:                                   ''
+
+      titulo_fondo:                                      '#fffff4'
+      titulo_fondo_ef:                                   ''
+      titulo_fondo_va:                                   ''
+
+
+
+##          ## UTILITY B ###  roksproket Servicios
+## ######################################################################
+    utility-b:
+## imagen
+      background:                                        '#ffffff'
+      background-image:                                  ''
+      background-repeat:                                 ''
+      background-size:                                   ''
+      image-mover:                                       ''
+
+## Color
+      borde_superior:                                    '3px solid #fffff1'
+      borde_caja:                                        '1px solid #e5e5e5'
+      bordes_redondos:                                   '4px'
+
+      titulo:                                            '#fffff1'   ## Título
+      fondo_titulo:                                      '#ffffff'
+
+      titulo_hover:                                      '#ffffff'  ## Título hover
+      fondo__titulos__hover:                             '#fffff1'
+
+      texto:                                             '#666666' ## Texto
+      fondo_texto:                                       '#fffff4'
+
+      link:                                              '#fffff1' ## Link
+      link_hover:                                        '#fffff2'
+
+## Textos
+      titulo_font:                                      '2'
+      titulo_size_l:                                    '1em'
+      titulo_size_d:                                    ''
+      titulo_size_t:                                    ''
+      titulo_size_m:                                    ''
+
+
+
+
+
+
+
+
+                                                         ## FEATURE ##
+## ####################### FEATURE TESTIMÓNIOS ##########################
+
+#########################################################################
+
+
+    feature:
+## imagen
+      fondo:                                             '#fffff2'
+      background-image:                                  ''
+      background-repeat:                                 ''
+      background-size:                                   ''
+      image-mover:                                       '' # position 5px 10px
+
+      fondo-box-image:                                   ''
+      fondo-box-repeat:                                  ''
+      fondo-box-size:                                    ''
+      image-box-mover:                                   ''
+
+## Color
+      border_top:                                        '#fffff1'
+      sombra:                                            '10px'
+      texto:                                             '#888888'
+      fondo_textos:                                      '#ffffff'
+      comillas:                                          '#fffff1'
+      nombre:                                            '#fffff2'
+
+## Texto
+
+      font_font:                                         '2'
+      font_size_l:                                       '20px/30px'
+      font_size_d:                                       ''
+      font_size_t:                                       '1em'
+      font_size_m:                                       ''
+
+
+
+
+
+
+
+                                                          ## EXPANDED ##
+## ############################ EXPANDED ###############################
+
+########################################################################
+
+    expanded:
+## image
+      background-image:                                  ''
+      background-repeat:                                 ''
+      background-size:                                   ''
+      image-mover:                                       ''
+
+## color
+      fondo:                                             '#fffff1'
+      iconos:                                            '#ffffff'
+      titulo:                                            '#ffffff'
+      sub-titulo:                                        '#fffff3'
+
+
+
+
+
+
+
+                                                         ## COPYRIGHT ##
+## ############################ COPYRIGHT ##############################
+
+########################################################################
+
+    copyright:
+
+  ## image
+      background-image:                                  ''
+      background-repeat:                                 ''
+      background-size:                                   ''
+      image-mover:                                       ''
+
+  ## color
+      fondo:                                             '#fffff4'
+      links:                                             '#fffff1'
+      links_hover:                                       '#666666'
+      texto:                                             '#666666'
+
+  ## texto
+      texto_font:                                        '2'
+      texto_size_l:                                      '1em'
+      texto_size_d:                                      ''
+      texto_size_t:                                      '.9em'
+      texto_size_m:                                      ''
+
+
+
+
+                                                         ## EL EQUIPO ##
+## ########################### EL EQUIPO  ##############################
+##  MENÚ                       CATEGORÍA                           MENÚ
+########################################################################
+
+    main-equipo-cat:
+## imagen
+      background_image:                                  ''
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+
+## Color
+      background:                                        '#fffff1'
+      titulo:                                            '#ffffff'
+      t-hover:                                           '#fffff3'
+      sub-titulo:                                        '#fffff3'
+
+## texto
+      titulo_font:                                       '2'
+      titulo_size_l:                                     '2.1em'
+      titulo_size_d:                                     ''
+      titulo_size_t:                                     '1.3em'
+      titulo_size_m:                                     '1.2em'
+
+      subtitulo_font:                                    '2'
+      subtitulo_size_l:                                  '1em'
+      subtitulo_size_d:                                  ''
+      subtitulo_size_t:                                  '.9em'
+      subtitulo_size_m:                                  ''
+
+## Extras
+      somb-caja:                                         '10px'   ## 0px sombra caja
+      somb-img:                                          '4px'   ## 0px sombra foto redonda
+
+
+
+
+##                        ## EL EQUIPO | VISTA ARTÍCULO
+## #####################################################################
+
+    main-equipo-item:
+## imagen
+      background_image:                                  ''   ## fondo titulo
+      background_repeat:                                 ''
+      background_size:                                   ''
+      background_position:                               ''
+
+## color
+      titulo:                                            '#363f45'   ## título
+      subtitulo:                                         '#666666'   ## sub-título
+      fondo_titulo:                                      '#eeeeee'   ## Fondo
+      fondo_titulo_ef:                                   ''
+      fondo_titulo_va:                                   ''
+
+## texto
+      titulo_font:                                       '2'   ## título
+      titulo_size_l:                                     'bold 1.4em'
+      titulo_size_d:                                     ''
+      titulo_size_t:                                     ''
+      titulo_size_m:                                     ''
+
+      subtitulo_font:                                    '2'   ## sub-título
+      subtitulo_size_l:                                  '1em'
+      subtitulo_size_d:                                  ''
+      subtitulo_size_t:                                  ''
+      subtitulo_size_m:                                  ''
+
+
+
+
+
+
+
+                                                              ## BLOG ##
+## #############################  BLOG  ################################
+##  MENÚ                       CATEGORÍA                           MENÚ
+########################################################################
+
+    blog:
+## imagen
+      background_image_leer:                             ''
+      background_repeat_leer:                            ''
+      background_size_leer:                              ''
+      background_position_leer:                          ''
+
+## color
+      color_fondo_leer:                                  '#fffff2'
+      color_texto_leer:                                  '#ffffff'
+
+
+
+
+      leer_font:                                         '2'
+      leer_size_l:                                       'bold 1.4em'
+      leer_size_d:                                       ''
+      leer_size_t:                                       ''
+      leer_size_m:                                       ''
+
+
+
+      titulo_color:                                      '#666666'
+
+      titulo_font:                                       '2'
+      titulo_size_l:                                     '1.4em/1.2em'
+      titulo_size_d:                                     ''
+      titulo_size_t:                                     '1.2em/1.1em'
+      titulo_size_m:                                     ''
+
+
+##                      BLOG | BLOG ARTÍCULO  ###
+## ######################################################################
+    blogitem:
+## imagen
+      titulo_color:                                      '#333333'
+      texto_color:                                       '#666666'
+
+## color
+      titulo_font:                                       '1'
+      titulo_size_l:                                     '2.6rem/2.6rem'
+      titulo_size_d:                                     ''
+      titulo_size_t:                                     '1.8rem/1.8rem'
+      titulo_size_m:                                     '1.4rem'
+
+
+      texto_font:                                        '2'
+      texto_size_l:                                      '1.1rem/1.6rem'
+      texto_size_d:                                      ''
+      texto_size_t:                                      ''
+      texto_size_m:                                      ''
+
+
+
+
+
+
+
+                                                          ## CONTACTO ##
+## ##########################  CONTACTO  ################################
+##  MENÚ                                                          MENÚ
+########################################################################
+
+    contacto:
+## FONDO
+      fondo:                                             ''
+      fondo_paddig:                                      ''
+      fondo_borde:                                       ''
+
+## CAMPOS
+      campos_color:                                      '#ffffff'
+      campos_borde:                                      '1px solid #eae9e9'
+      campos_placeholder:                                '#666666'
+      campos_texto:                                      '#fffff1'
+
+## CAMPOS REQUERIDOS
+      campos_requeridos:                                 '#b94a48'
+
+## MAPA
+      mapa_borde:                                        '0'
+
+## BOTON
+      botones_fondo:                                     '#fffff1'
+      botones_texto:                                     '#ffffff'
+
+## DATOS LATERAL
+    ## color
+      datos_titulo_color:                                '#666666'
+      datos_texto_color:                                 '#666666'
+      datos_iconos:                                      '#fffff1'
+      datos_lineas:                                      '#fffff1'
+
+    ## Texto
+      datos_titulo_font:                                 '1' ## Titulo
+      datos_titulo_size_l:                               'bold .8rem/1rem'
+      datos_titulo_size_d:                               '0'
+      datos_titulo_size_t:                               '0'
+      datos_titulo_size_m:                               '0'
+
+
+      datos_texto_font:                                  '2' ## texto
+      datos_texto_size_l:                                '.8rem/1.2rem'
+      datos_texto_size_d:                                '0'
+      datos_texto_size_t:                                '0'
+      datos_texto_size_m:                                '0'
+
+## DESCRIPCION
+    ## color
+      descripcion_titulo_color:                          '#333333'
+      descripcion_texto_color:                           '#666666'
+
+
+    ## Texto
+      descripcion_titulo_font:                           '1'
+      descripcion_titulo_size_l:                         ''
+      descripcion_titulo_size_d:                         '0'
+      descripcion_titulo_size_t:                         '0'
+      descripcion_titulo_size_m:                         '0'
+
+
+
+      descripcion_texto_font:                            '2'
+      descripcion_texto_size_l:                          ''
+      descripcion_texto_size_d:                          '0'
+      descripcion_texto_size_t:                          '0'
+      descripcion_texto_size_m:                          '0'

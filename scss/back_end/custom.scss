@@ -1,4 +1,19 @@
 /********************************************************
+  PANEL GANTRY 5
+********************************************************/
+$multi_posicion            : #C21733;
+
+
+.com_gantry5 #g5-container .lm-blocks .particle[data-lm-blocksubtype="multi-posicion"]
+/*#g5-container .g5-lm-particles-picker li[data-lm-subtype="escritorio"]*/{
+	background:$multi_posicion;
+	color:lighten($multi_posicion,50%);
+	& span{
+		color:lighten($multi_posicion,50%);
+	}
+}
+
+/********************************************************
                 BACK - CUSTOM  ISIS
 ********************************************************/
 #content > div > div > div.span12 .copyright,

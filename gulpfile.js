@@ -38,7 +38,6 @@ var scripts = [
 	assetsDir + '/bower/wow/dist/wow.min.js',
 	jsDir + '/wowIni.js',
 	jsDir + '/picture_ini.js',
-	jsDir + '/paletacolor.js',
   assetsDir + '/bower/picturefill/dist/picturefill.min.js',
 	assetsDir + '/bower/rrssb/js/rrssb.min.js',
   jsDir + '/simple.js'
@@ -150,7 +149,7 @@ gulp.task('back', function() {
 // TAREA  LIMPIAR NUESTRAS CARPETAS DESTINO
 // ///////////////////////////////////////////////
 gulp.task('clean', function() {
-gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css'], {read:false})
+gulp.src(['scss/public/**/*.scss', targetJs + '/simple.js', targetCss + '/simple.css'], {read:false})
 .pipe(clean());
 });
 
@@ -160,7 +159,7 @@ gulp.src(['scss/public/**/*.scss', targetJs + '/**/*.js', targetCss + '/**/*.css
 // ////////////////////////////////////////////////
 gulp.task('browserSync', function() {
     browserSync({
-        proxy:"http://vital:1000",
+        proxy:"http://p3:5003",
         port: 8000,
         open: false,
         notify: false,
